@@ -1,0 +1,18 @@
+<ion-grid class="h-100 ion-justify-content-around">
+  <ion-row class="ion-justify-content-around ion-wrap h-100">
+    <ng-container *ngFor="let image of images; let i = index">
+      <ng-container *ngIf="i % 2 === 0">
+        <ion-col size="6">
+          <ion-button expand="full" fill="solid" class="grid-item" [disabled]="allButtonsDisabled || buttonDisabled[i]" (click)="handleButtonClick(image, i)" color="danger">
+              <img [src]="buttonImages[i]" alt="" width="35" height="35" [style.display]="buttonImages[i] ? 'block' : 'none'">
+          </ion-button>
+        </ion-col>  
+        <ion-col size="6" *ngIf="i + 1 < images.length">
+          <ion-button class="mh-100" expand="full" fill="solid" class="grid-item" [disabled]="allButtonsDisabled || buttonDisabled[i + 1]" (click)="handleButtonClick(images[i + 1], i + 1)" color="danger">
+            <img [src]="buttonImages[i + 1]" alt="" width="35" height="35" [style.display]="buttonImages[i+1] ? 'block' : 'none'">
+          </ion-button>
+        </ion-col>
+      </ng-container>
+    </ng-container>
+  </ion-row>
+</ion-grid>

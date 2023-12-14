@@ -1,0 +1,47 @@
+/* Estilo para el modal */
+.modal {
+    display: none; /* Oculta el modal por defecto */
+    position: absolute;
+    z-index: 1;
+    padding-top: 50px; /* Ajusta la posición del modal para evitar que el header lo cubra */
+    left: 0;
+    right: 0;
+    top: 25%;
+    margin: auto;
+    width: 90%;
+    height: 50%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    text-align: center;
+  }
+  
+  /* Estilo para la imagen dentro del modal */
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%; /* Ancho de la imagen */
+    max-width: 100%; /* Asegura que la imagen no sea más grande que el modal */
+    max-height: 70vh; /* Limita la altura máxima de la imagen para que se ajuste al modal */
+  }
+  
+  /* Estilo para el botón de cierre */
+  .close {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+  
+  /* Estilo hover para el botón de cierre */
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .height{
+    height: 100%;
+  }

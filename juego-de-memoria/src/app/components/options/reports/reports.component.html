@@ -1,0 +1,34 @@
+<div class="h-100 d-flex flex-column justify-content-around content p-3">
+  <ion-accordion-group  [value]="['first']">
+    <ion-accordion value="first">
+      <ion-item slot="header">
+        <ion-label>FÁCIL</ion-label>
+      </ion-item>
+  
+      <ng-container *ngFor="let facil of registrosFacil; let i = index">
+          <div class="ion-padding" slot="content">{{i+1 + ' - ' + facil.usuario + ': ' + facil.tiempo + ' segundos'}}</div>
+      </ng-container>
+      
+    </ion-accordion>
+    <ion-accordion value="second">
+      <ion-item slot="header">
+        <ion-label>MEDIO</ion-label>
+      </ion-item>
+  
+      <ng-container *ngFor="let medio of registrosMedio; let i = index">
+        <div class="ion-padding" slot="content">{{i+1 + ' - ' + medio.usuario + ': ' + medio.tiempo + ' segundos'}}</div>
+      </ng-container>
+  
+    </ion-accordion>
+    <ion-accordion value="third">
+      <ion-item slot="header">
+        <ion-label>DIFÍCIL</ion-label>
+      </ion-item>
+  
+      <ng-container *ngFor="let dificil of registrosDificil; let i = index">
+        <div class="ion-padding" slot="content">{{i+1 + ' - ' + dificil.usuario + ': ' + dificil.tiempo + ' segundos'}}</div>
+      </ng-container>
+  
+    </ion-accordion>
+  </ion-accordion-group>
+</div>

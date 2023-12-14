@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33801.468
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consola", "Consola\Consola.csproj", "{7A8873CE-514D-4735-87C8-80B8CCB51A01}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vista", "Vista\Vista.csproj", "{47D18F83-5512-493C-84D0-42154683A665}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca", "Biblioteca\Biblioteca.csproj", "{0E3E83DA-8011-4012-A06D-C0A8038DF2C5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7A8873CE-514D-4735-87C8-80B8CCB51A01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A8873CE-514D-4735-87C8-80B8CCB51A01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A8873CE-514D-4735-87C8-80B8CCB51A01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A8873CE-514D-4735-87C8-80B8CCB51A01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47D18F83-5512-493C-84D0-42154683A665}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47D18F83-5512-493C-84D0-42154683A665}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47D18F83-5512-493C-84D0-42154683A665}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47D18F83-5512-493C-84D0-42154683A665}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E3E83DA-8011-4012-A06D-C0A8038DF2C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E3E83DA-8011-4012-A06D-C0A8038DF2C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E3E83DA-8011-4012-A06D-C0A8038DF2C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E3E83DA-8011-4012-A06D-C0A8038DF2C5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {542A6822-2E11-4C71-9624-762CAB32CEF5}
+	EndGlobalSection
+EndGlobal

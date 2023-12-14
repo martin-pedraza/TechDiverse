@@ -1,0 +1,17 @@
+SELECT * FROM Productos ORDER BY Nombre;
+SELECT * FROM Proveedores WHERE Localidad = 'Quilmes';
+SELECT * FROM Envios WHERE Cantidad BETWEEN 200 AND 300;
+SELECT SUM(Cantidad) AS Envios FROM Envios;
+SELECT DISTINCT Codigo_Producto FROM Envios;
+SELECT Proveedores.Nombre AS Proveedor, Productos.Nombre AS Producto FROM Envios INNER JOIN Proveedores ON Envios.Numero_Proveedor = Proveedores.Numero_Proveedor INNER JOIN Productos ON Envios.Codigo_Producto = Productos.Codigo_Producto;
+SELECT (Envios.Cantidad * Productos.Precio) AS Monto FROM Envios INNER JOIN Productos ON Envios.Codigo_Producto = Productos.Codigo_Producto;
+SELECT SUM(Envios.Cantidad) AS Suma FROM Envios WHERE Envios.Numero_Proveedor = 102 AND Envios.Codigo_Producto = 1;
+SELECT Envios.Codigo_Producto FROM Envios INNER JOIN Proveedores ON Envios.Numero_Proveedor = Proveedores.Numero_Proveedor WHERE Proveedores.Localidad = 'Avellaneda';
+SELECT Proveedores.Domicilio, Proveedores.Localidad FROM Proveedores WHERE Nombre LIKE '%i%';
+INSERT INTO Productos ("Nombre", "Dimensiones", "Precio") VALUES ('Chocolate', 'Chico', 25.35);
+INSERT INTO Proveedores ("Nombre") VALUES ('Mario');
+INSERT INTO Proveedores ("Numero_Proveedor", "Nombre", "Localidad") VALUES (107, 'Rosales', 'La Plata');
+UPDATE Productos SET Precio = 97.50 WHERE Dimensiones = 'Grande';
+UPDATE Productos SET Dimensiones = 'Mediano' FROM Productos INNER JOIN Envios ON Envios.Codigo_Producto = Productos.Codigo_Producto WHERE Envios.Cantidad > 300;
+DELETE FROM Productos WHERE Productos.Codigo_Producto = 1;
+DELETE FROM Proveedores WHERE NOT Proveedores.Numero_Proveedor IN (SELECT Proveedores.Numero_Proveedor FROM Proveedores INNER JOIN Envios ON Proveedores.Numero_Proveedor = Envios.Numero_Proveedor);

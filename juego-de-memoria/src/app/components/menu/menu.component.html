@@ -1,0 +1,51 @@
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>MENÚ</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-padding">
+    <ion-button color="success" expand="block" class="ion-margin-vertical" routerLink="/inicio/facil" (click)="CammbiarEsTop(false)">FÁCIL</ion-button>
+    <ion-button color="warning" expand="block" class="ion-margin-vertical" routerLink="/inicio/medio"  (click)="CammbiarEsTop(false)">MEDIO</ion-button>
+    <ion-button color="danger" expand="block" class="ion-margin-vertical" routerLink="/inicio/dificil"  (click)="CammbiarEsTop(false)">DIFÍCIL</ion-button>
+    <ion-button color="medium" expand="block" class="ion-margin-vertical" routerLink="/inicio/top"  (click)="CammbiarEsTop(true)">TOP</ion-button>
+    <ion-button color="light" expand="block" class="ion-margin-vertical" (click)="CerrarSesion()">SALIR</ion-button>
+  </ion-content>
+</ion-menu>
+
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title class="text-center">JUEGO DE MEMORIA</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true"> 
+    <ng-template [ngIf]="!esTop">
+      <ng-template [ngIf]="RelojIniciado">
+        <ion-fab slot="fixed" vertical="bottom" horizontal="end" [edge]="true">
+          <ion-fab-button (click)="IniciarReloj()">
+            <ion-icon name="play-outline"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+      </ng-template>
+    </ng-template>
+
+    <router-outlet></router-outlet>
+
+  </ion-content>
+
+  <ng-template [ngIf]="!esTop">
+    <ion-footer>
+      <ion-toolbar>
+        <ion-title *ngIf="!RelojIniciado; else elseBlock">{{Clock}} segundos</ion-title>
+        <ng-template #elseBlock><ion-title>Presione el botón para iniciar</ion-title></ng-template>
+      </ion-toolbar>
+    </ion-footer>
+  </ng-template>
+
+</div>

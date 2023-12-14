@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "QGtYt9iAKBn93cS1JEH44qgfX8glNwDLCQBXrE5FxIhSCiDMgPUzGzWTfBoLfOlbr9kBuNWPYRgH8sOHgUKu6Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Administrator\\source\\repos\\exercises1\\class19-Multihilo\\class19-exI02\\Consola\\Consola.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Administrator\\.nuget\\packages\\namegenerator\\2.0.4\\namegenerator.2.0.4.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\system.text.json\\5.0.1\\system.text.json.5.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

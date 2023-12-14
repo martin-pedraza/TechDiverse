@@ -1,0 +1,195 @@
+<ion-content>
+
+    <ion-fab horizontal="start" vertical="top">
+      <ion-fab-button color="dark">
+        <img [src]="botonIdioma" alt="">
+      </ion-fab-button>
+      
+      <ion-fab-list side="bottom">
+        <ion-fab-button (click)="CambiarIdioma('ingles')" color="danger" >
+          <img src="./../../../assets/flags/england.png" alt="" srcset="" />
+        </ion-fab-button>
+    
+        <ion-fab-button (click)="CambiarIdioma('español')" color="primary">
+          <img src="./../../../assets/flags/espana.png" alt="" />
+        </ion-fab-button>
+    
+        <ion-fab-button (click)="CambiarIdioma('portugues')" color="warning">
+          <img src="./../../../assets/flags/portugal.png" alt="" />
+        </ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>
+
+    <ion-fab horizontal="end" vertical="top">
+      <ion-fab-button color="dark">
+        <ion-icon [name]="botonOpcion"></ion-icon>
+      </ion-fab-button>
+      
+      <ion-fab-list side="bottom">
+        <ion-fab-button (click)="CambiarOpcion('animales')" color="light">
+          <ion-icon name="logo-tux"></ion-icon>
+        </ion-fab-button>
+    
+        <ion-fab-button (click)="CambiarOpcion('colores')" color="success">
+          <ion-icon name="color-palette"></ion-icon>
+        </ion-fab-button>
+    
+        <ion-fab-button (click)="CambiarOpcion('numeros')" color="medium">
+          <ion-icon name="calendar-number-outline"></ion-icon>
+        </ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>
+    
+
+  <div class="d-flex justify-content-center" style="height: 100%;">
+    <ng-template [ngIf]="opcionElegida == 'numeros'">
+      <div class="d-flex flex-column flex-sm-row">
+        <ion-button
+          fill="solid"
+          (click)="EmitirSonido('uno')"
+          class="image-button"
+          color="danger"
+        >
+          <img src="./../../../assets/numbers/numero-uno.png" alt="" />
+        </ion-button>
+        <ion-button
+          fill="solid"
+          (click)="EmitirSonido('dos')"
+          class="image-button"
+        >
+          <img src="./../../../assets/numbers/numero-2.png" alt="" />
+        </ion-button>
+        <ion-button
+          fill="solid"
+          (click)="EmitirSonido('tres')"
+          class="image-button"
+          color="warning"
+        >
+          <img src="./../../../assets/numbers/numero-3.png" alt="" />
+        </ion-button>
+        <ion-button
+          fill="solid"
+          (click)="EmitirSonido('cuatro')"
+          class="image-button"
+          color="light"
+        >
+          <img src="./../../../assets/numbers/numero-4.png" alt="" />
+        </ion-button>
+        <ion-button
+          fill="solid"
+          (click)="EmitirSonido('cinco')"
+          class="image-button"
+          color="success"
+        >
+          <img src="./../../../assets/numbers/numero-5.png" alt="" />
+        </ion-button>
+        <ion-button
+          fill="solid"
+          (click)="EmitirSonido('seis')"
+          class="image-button"
+          color="medium"
+        >
+          <img src="./../../../assets/numbers/numero-6.png" alt="" />
+        </ion-button>
+      </div>
+    </ng-template>
+
+    <ng-template [ngIf]="opcionElegida == 'animales'">
+      <div class="d-flex flex-column flex-sm-row">
+        <ion-button
+          fill="solid"
+          (click)="EmitirSonido('gato')"
+          class="image-button"
+          color="danger"
+          ><img src="./../../../assets/animals/gato.png" alt=""
+        /></ion-button>
+        <ion-button
+          fill="solid"
+          (click)="EmitirSonido('pajaro')"
+          class="image-button"
+          ><img src="./../../../assets/animals/pajaro.png" alt=""
+        /></ion-button>
+        <ion-button
+          fill="solid"
+          (click)="EmitirSonido('perro')"
+          class="image-button"
+          color="warning"
+          ><img src="./../../../assets/animals/perro.png" alt=""
+        /></ion-button>
+        <ion-button
+          fill="solid"
+          (click)="EmitirSonido('caballo')"
+          class="image-button"
+          color="light"
+          ><img src="./../../../assets/animals/caballo.png" alt=""
+        /></ion-button>
+        <ion-button
+          fill="solid"
+          (click)="EmitirSonido('canguro')"
+          class="image-button"
+          color="success"
+          ><img src="./../../../assets/animals/canguro.png" alt=""
+        /></ion-button>
+        <ion-button
+          fill="solid"
+          (click)="EmitirSonido('leon')"
+          class="image-button"
+          color="medium"
+          ><img src="./../../../assets/animals/leon.png" alt=""
+        /></ion-button>
+      </div>
+    </ng-template>
+
+    <ng-template [ngIf]="opcionElegida == 'colores'" >
+      <ion-grid class="d-flex flex-sm-row flex-wrap justify-content-center" style="height: 90%; width: 100%;">
+        <ion-button
+          fill="solid"
+          color="danger"
+          (click)="EmitirSonido('rojo')"
+          class="col-sm-3 btn-lg"
+        ></ion-button>
+        
+        <ion-button
+          fill="solid"
+          color="warning"
+          (click)="EmitirSonido('amarillo')"
+          class="col-sm-3 btn-lg"
+        ></ion-button>
+        
+        <ion-button
+          fill="solid"
+          color="primary"
+          (click)="EmitirSonido('azul')"
+          class="col-sm-3 btn-lg"
+        ></ion-button>
+
+        <ion-button
+          fill="solid"
+          color="light"
+          (click)="EmitirSonido('blanco')"
+          class="col-sm-3 btn-lg"
+        ></ion-button>
+        
+        <ion-button
+          fill="solid"
+          color="success"
+          (click)="EmitirSonido('verde')"
+          class="col-sm-3 btn-lg"
+        ></ion-button>
+        
+        <ion-button
+          fill="solid"
+          color="medium"
+          (click)="EmitirSonido('gris')"
+          class="col-sm-3 btn-lg"
+        ></ion-button>
+      </ion-grid>
+    </ng-template>
+  </div>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="CerrarSesion()" color="danger">
+      <ion-icon name="exit-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

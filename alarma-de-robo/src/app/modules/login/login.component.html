@@ -1,0 +1,44 @@
+<ion-content class="ion-padding"  [fullscreen]="true">
+    
+ <div class="d-flex flex-column justify-content-between h-100">
+   <div>
+     <ion-input
+       label="Correo electrónico"
+       label-placement="floating"
+       fill="solid"
+       placeholder="ejemplo@prueba.com"
+       type="email"
+       [(ngModel)]="usuario"
+     ></ion-input>
+     <ion-input
+       label="Contraseña"
+       label-placement="floating"
+       fill="solid"
+       type="password"
+       [(ngModel)]="clave"
+     ></ion-input>
+     
+     <ion-button expand="block" (click)="Acceder(usuario, clave)" color="success"
+       >ACCEDER</ion-button
+     >
+   </div>
+  
+   <ion-img
+     src="./../../../assets/frase.png"
+     alt="Frase"
+   ></ion-img>
+  
+   <div>
+     <ion-button expand="block" color="success" (click)="AutocompletarUno()" fill="outline"
+       >ADMINISTRADOR</ion-button
+     >
+     <ion-button expand="block" color="success" (click)="AutocompletarDos()" fill="outline"
+       >INVITADO</ion-button
+     >
+     <ion-button expand="block" color="success" (click)="AutocompletarTres()" fill="outline"
+       >USUARIO</ion-button
+     >
+   </div>
+ </div>
+
+</ion-content>

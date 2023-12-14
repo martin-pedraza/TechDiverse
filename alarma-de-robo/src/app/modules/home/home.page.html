@@ -1,0 +1,14 @@
+<ion-content [fullscreen]="true">
+  <ion-button
+    *ngIf="!AlarmaActivada; else elseBlock"
+    (click)="CambiarEstadoAlarma()"
+    color="success"
+    expand="block"
+    class="h-100 m-0 text-center"
+    style="font-size: 3em;"
+    >ACTIVAR</ion-button
+  >
+  <ng-template #elseBlock>
+    <router-outlet></router-outlet>
+  </ng-template>
+</ion-content>

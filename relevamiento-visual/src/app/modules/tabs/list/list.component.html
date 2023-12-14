@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title *ngIf="esFotoFea; else elseBlock" class="fs-1 text-center">FOTOS FEAS</ion-title>
+    <ng-template #elseBlock><ion-title class="fs-1 text-center">FOTOS LINDAS</ion-title></ng-template>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <ion-loading isOpen="true" message="Cargando..." duration="3000"></ion-loading>
+
+  <div *ngFor="let foto of fotos">
+    <ion-card>
+      <img alt="foto" src="{{ foto.foto }}" />
+      <div class="d-flex justify-content-between align-items-center">
+        <ion-card-subtitle>{{ foto.creador }}</ion-card-subtitle>
+        <ion-button size="small" color="success" [disabled]="VerificarListado(foto.usuarios)" (click)="Gustar(foto.id)">
+          <ion-icon name="thumbs-up-sharp"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-card>
+  </div>
+</ion-content>

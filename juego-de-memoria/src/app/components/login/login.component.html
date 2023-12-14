@@ -1,0 +1,41 @@
+<ion-content [fullscreen]="true" scroll-y="false">
+  <div class="h-100 d-flex flex-column justify-content-around">
+    <ion-img
+      src="./../../../assets/icon-only.png"
+      alt="Logo"
+    ></ion-img>
+
+    <div>
+      <ion-input
+        label="Correo electrónico"
+        labelPlacement="stacked"
+        fill="solid"
+        placeholder="ejemplo@prueba.com"
+        type="email"
+        [(ngModel)]="usuario"
+      ></ion-input>
+      <ion-input
+        label="Contraseña"
+        labelPlacement="stacked"
+        fill="solid"
+        type="password"
+        [(ngModel)]="clave"
+      ></ion-input>
+    </div>
+    <ion-button expand="block" (click)="Acceder(usuario, clave)" shape="round" size="large" color="success" class="h-25"
+      >Acceder</ion-button
+    >
+
+    <ion-list>
+      <ion-item>
+        <ion-select aria-label="usuario" interface="popover" placeholder="Autocompletar" (ionChange)="onSelectChange($event)">
+          <ion-select-option value="Administrador" (click)="AutocompletarUno()">Administrador</ion-select-option>
+          <ion-select-option value="Invitado" (click)="AutocompletarDos()">Invitado</ion-select-option>
+          <ion-select-option value="Usuario" (click)="AutocompletarTres()">Usuario</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    
+  </div>
+</ion-content>

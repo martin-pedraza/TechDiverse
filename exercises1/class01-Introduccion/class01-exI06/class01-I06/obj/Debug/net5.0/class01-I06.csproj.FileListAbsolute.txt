@@ -1,0 +1,16 @@
+C:\Users\Administrator\source\repos\excercises1\class01-I06\class01-I06\bin\Debug\net5.0\class01-I06.exe
+C:\Users\Administrator\source\repos\excercises1\class01-I06\class01-I06\bin\Debug\net5.0\class01-I06.deps.json
+C:\Users\Administrator\source\repos\excercises1\class01-I06\class01-I06\bin\Debug\net5.0\class01-I06.runtimeconfig.json
+C:\Users\Administrator\source\repos\excercises1\class01-I06\class01-I06\bin\Debug\net5.0\class01-I06.runtimeconfig.dev.json
+C:\Users\Administrator\source\repos\excercises1\class01-I06\class01-I06\bin\Debug\net5.0\class01-I06.dll
+C:\Users\Administrator\source\repos\excercises1\class01-I06\class01-I06\bin\Debug\net5.0\class01-I06.pdb
+C:\Users\Administrator\source\repos\excercises1\class01-I06\class01-I06\obj\Debug\net5.0\class01-I06.csproj.AssemblyReference.cache
+C:\Users\Administrator\source\repos\excercises1\class01-I06\class01-I06\obj\Debug\net5.0\class01-I06.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\source\repos\excercises1\class01-I06\class01-I06\obj\Debug\net5.0\class01-I06.AssemblyInfoInputs.cache
+C:\Users\Administrator\source\repos\excercises1\class01-I06\class01-I06\obj\Debug\net5.0\class01-I06.AssemblyInfo.cs
+C:\Users\Administrator\source\repos\excercises1\class01-I06\class01-I06\obj\Debug\net5.0\class01-I06.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\excercises1\class01-I06\class01-I06\obj\Debug\net5.0\class01-I06.dll
+C:\Users\Administrator\source\repos\excercises1\class01-I06\class01-I06\obj\Debug\net5.0\refint\class01-I06.dll
+C:\Users\Administrator\source\repos\excercises1\class01-I06\class01-I06\obj\Debug\net5.0\class01-I06.pdb
+C:\Users\Administrator\source\repos\excercises1\class01-I06\class01-I06\obj\Debug\net5.0\class01-I06.genruntimeconfig.cache
+C:\Users\Administrator\source\repos\excercises1\class01-I06\class01-I06\obj\Debug\net5.0\ref\class01-I06.dll

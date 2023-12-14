@@ -1,0 +1,1118 @@
+{
+	"info": {
+		"_postman_id": "00f0906f-f949-4958-839b-a943c08c836c",
+		"name": "TP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "24737839"
+	},
+	"item": [
+		{
+			"name": "usuario",
+			"item": [
+				{
+					"name": "usuarios all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:666/usuarios"
+					},
+					"response": []
+				},
+				{
+					"name": "usuario new",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "perfil",
+									"value": "mozo",
+									"type": "text"
+								},
+								{
+									"key": "sector",
+									"value": "mesa",
+									"type": "text"
+								},
+								{
+									"key": "nombre",
+									"value": "maria",
+									"type": "text"
+								},
+								{
+									"key": "clave",
+									"value": "1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:666/usuarios/",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"usuarios",
+								""
+							],
+							"query": [
+								{
+									"key": "perfil",
+									"value": "mozo",
+									"disabled": true
+								},
+								{
+									"key": "sector",
+									"value": "mesa",
+									"disabled": true
+								},
+								{
+									"key": "nombre",
+									"value": "maria",
+									"disabled": true
+								},
+								{
+									"key": "clave",
+									"value": "1234",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "usuario one",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "perfil",
+									"value": "cocinero",
+									"type": "text"
+								},
+								{
+									"key": "sector",
+									"value": "cocina",
+									"type": "text"
+								},
+								{
+									"key": "nombre",
+									"value": "mabel",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:666/usuarios/1",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"usuarios",
+								"1"
+							],
+							"query": [
+								{
+									"key": "perfil",
+									"value": "cocinero",
+									"disabled": true
+								},
+								{
+									"key": "sector",
+									"value": "cocina",
+									"disabled": true
+								},
+								{
+									"key": "nombre",
+									"value": "mabel",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "usuario suspend/unsuspend",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "perfil",
+									"value": "cocinero",
+									"type": "text"
+								},
+								{
+									"key": "sector",
+									"value": "cocina",
+									"type": "text"
+								},
+								{
+									"key": "nombre",
+									"value": "mabel",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:666/usuarios/1687273522",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"usuarios",
+								"1687273522"
+							],
+							"query": [
+								{
+									"key": "perfil",
+									"value": "cocinero",
+									"disabled": true
+								},
+								{
+									"key": "sector",
+									"value": "cocina",
+									"disabled": true
+								},
+								{
+									"key": "nombre",
+									"value": "mabel",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "perfil",
+									"value": "cocinero",
+									"type": "text"
+								},
+								{
+									"key": "sector",
+									"value": "cocina",
+									"type": "text"
+								},
+								{
+									"key": "nombre",
+									"value": "mabel",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:666/usuarios/1",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"usuarios",
+								"1"
+							],
+							"query": [
+								{
+									"key": "perfil",
+									"value": "cocinero",
+									"disabled": true
+								},
+								{
+									"key": "sector",
+									"value": "cocina",
+									"disabled": true
+								},
+								{
+									"key": "nombre",
+									"value": "mabel",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "mesa",
+			"item": [
+				{
+					"name": "mesas all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:666/mesas"
+					},
+					"response": []
+				},
+				{
+					"name": "mesa new",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigo",
+									"value": "xC344",
+									"type": "text"
+								},
+								{
+									"key": "estado",
+									"value": "con cliente esperando",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "nombre",
+									"value": "mabel",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:666/mesas",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"mesas"
+							],
+							"query": [
+								{
+									"key": "perfil",
+									"value": "cocinero",
+									"disabled": true
+								},
+								{
+									"key": "sector",
+									"value": "cocina",
+									"disabled": true
+								},
+								{
+									"key": "nombre",
+									"value": "mabel",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mesa one",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "perfil",
+									"value": "cocinero",
+									"type": "text"
+								},
+								{
+									"key": "sector",
+									"value": "cocina",
+									"type": "text"
+								},
+								{
+									"key": "nombre",
+									"value": "mabel",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:666/mesas/xC344",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"mesas",
+								"xC344"
+							],
+							"query": [
+								{
+									"key": "perfil",
+									"value": "cocinero",
+									"disabled": true
+								},
+								{
+									"key": "sector",
+									"value": "cocina",
+									"disabled": true
+								},
+								{
+									"key": "nombre",
+									"value": "mabel",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mesa reopen",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "perfil",
+									"value": "cocinero",
+									"type": "text"
+								},
+								{
+									"key": "sector",
+									"value": "cocina",
+									"type": "text"
+								},
+								{
+									"key": "nombre",
+									"value": "mabel",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:666/mesas/g9797",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"mesas",
+								"g9797"
+							],
+							"query": [
+								{
+									"key": "perfil",
+									"value": "cocinero",
+									"disabled": true
+								},
+								{
+									"key": "sector",
+									"value": "cocina",
+									"disabled": true
+								},
+								{
+									"key": "nombre",
+									"value": "mabel",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mesa close",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "perfil",
+									"value": "cocinero",
+									"type": "text"
+								},
+								{
+									"key": "sector",
+									"value": "cocina",
+									"type": "text"
+								},
+								{
+									"key": "nombre",
+									"value": "mabel",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:666/mesas/g9797",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"mesas",
+								"g9797"
+							],
+							"query": [
+								{
+									"key": "perfil",
+									"value": "cocinero",
+									"disabled": true
+								},
+								{
+									"key": "sector",
+									"value": "cocina",
+									"disabled": true
+								},
+								{
+									"key": "nombre",
+									"value": "mabel",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "pedido",
+			"item": [
+				{
+					"name": "pedidos all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:666/pedidos"
+					},
+					"response": []
+				},
+				{
+					"name": "pedido new",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "mesa",
+									"value": "xC344",
+									"type": "text"
+								},
+								{
+									"key": "productos",
+									"value": "[{\"producto\": 6, \"cantidad\": 1, \"detalles\": \"pollo\"},{\"producto\": 7, \"cantidad\": 2, \"detalles\": \"sin cebolla\"},{\"producto\": 8, \"cantidad\": 1, \"detalles\": \"\"},{\"producto\": 5, \"cantidad\": 1, \"detalles\": \"con limon\"}]",
+									"type": "text"
+								},
+								{
+									"key": "cliente",
+									"value": "sergio",
+									"type": "text"
+								},
+								{
+									"key": "foto",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:666/pedidos",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"pedidos"
+							],
+							"query": [
+								{
+									"key": "perfil",
+									"value": "cocinero",
+									"disabled": true
+								},
+								{
+									"key": "sector",
+									"value": "cocina",
+									"disabled": true
+								},
+								{
+									"key": "nombre",
+									"value": "mabel",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pedido one",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigo",
+									"value": "xC344",
+									"type": "text"
+								},
+								{
+									"key": "estado",
+									"value": "con cliente esperando",
+									"type": "text"
+								},
+								{
+									"key": "nombre",
+									"value": "mabel",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:666/pedidos/j3a22",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"pedidos",
+								"j3a22"
+							],
+							"query": [
+								{
+									"key": "perfil",
+									"value": "cocinero",
+									"disabled": true
+								},
+								{
+									"key": "sector",
+									"value": "cocina",
+									"disabled": true
+								},
+								{
+									"key": "nombre",
+									"value": "mabel",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pedido change state",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigo",
+									"value": "xC344",
+									"type": "text"
+								},
+								{
+									"key": "estado",
+									"value": "con cliente esperando",
+									"type": "text"
+								},
+								{
+									"key": "nombre",
+									"value": "mabel",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:666/pedidos/j3a22",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"pedidos",
+								"j3a22"
+							],
+							"query": [
+								{
+									"key": "perfil",
+									"value": "cocinero",
+									"disabled": true
+								},
+								{
+									"key": "sector",
+									"value": "cocina",
+									"disabled": true
+								},
+								{
+									"key": "nombre",
+									"value": "mabel",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pedido cancel",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigo",
+									"value": "xC344",
+									"type": "text"
+								},
+								{
+									"key": "estado",
+									"value": "con cliente esperando",
+									"type": "text"
+								},
+								{
+									"key": "nombre",
+									"value": "mabel",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:666/pedidos/j3a22",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"pedidos",
+								"j3a22"
+							],
+							"query": [
+								{
+									"key": "perfil",
+									"value": "cocinero",
+									"disabled": true
+								},
+								{
+									"key": "sector",
+									"value": "cocina",
+									"disabled": true
+								},
+								{
+									"key": "nombre",
+									"value": "mabel",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "consulta cliente",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "producto",
+			"item": [
+				{
+					"name": "productos all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:666/productos"
+					},
+					"response": []
+				},
+				{
+					"name": "producto new",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "tipo",
+									"value": "postre",
+									"type": "text"
+								},
+								{
+									"key": "detalle",
+									"value": "panque con crema",
+									"type": "text"
+								},
+								{
+									"key": "precio",
+									"value": "1300",
+									"type": "text"
+								},
+								{
+									"key": "tiempo",
+									"value": "600",
+									"type": "text"
+								},
+								{
+									"key": "pedido",
+									"value": "73cp2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:666/productos",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"productos"
+							],
+							"query": [
+								{
+									"key": "perfil",
+									"value": "cocinero",
+									"disabled": true
+								},
+								{
+									"key": "sector",
+									"value": "cocina",
+									"disabled": true
+								},
+								{
+									"key": "nombre",
+									"value": "mabel",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "producto one",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigo",
+									"value": "486Wp",
+									"type": "text"
+								},
+								{
+									"key": "estado",
+									"value": "en preparacion",
+									"type": "text"
+								},
+								{
+									"key": "nombre",
+									"value": "sergio",
+									"type": "text"
+								},
+								{
+									"key": "foto",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:666/productos/1",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"productos",
+								"1"
+							],
+							"query": [
+								{
+									"key": "perfil",
+									"value": "cocinero",
+									"disabled": true
+								},
+								{
+									"key": "sector",
+									"value": "cocina",
+									"disabled": true
+								},
+								{
+									"key": "nombre",
+									"value": "mabel",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "producto",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigo",
+									"value": "486Wp",
+									"type": "text"
+								},
+								{
+									"key": "estado",
+									"value": "en preparacion",
+									"type": "text"
+								},
+								{
+									"key": "nombre",
+									"value": "sergio",
+									"type": "text"
+								},
+								{
+									"key": "foto",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:666/productos/1",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"productos",
+								"1"
+							],
+							"query": [
+								{
+									"key": "perfil",
+									"value": "cocinero",
+									"disabled": true
+								},
+								{
+									"key": "sector",
+									"value": "cocina",
+									"disabled": true
+								},
+								{
+									"key": "nombre",
+									"value": "mabel",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "venta",
+			"item": [
+				{
+					"name": "ventas all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:666/ventas"
+					},
+					"response": []
+				},
+				{
+					"name": "venta new",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "monto",
+									"value": "3000",
+									"type": "text"
+								},
+								{
+									"key": "pedido",
+									"value": "q3522",
+									"type": "text"
+								},
+								{
+									"key": "mesa",
+									"value": "39e8z",
+									"type": "text"
+								}
+							]
+						},
+						"url": "localhost:666/ventas"
+					},
+					"response": []
+				},
+				{
+					"name": "venta one",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:666/ventas/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "encuesta",
+			"item": [
+				{
+					"name": "encuestas all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:666/encuestas"
+					},
+					"response": []
+				},
+				{
+					"name": "encuesta new",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "mesa",
+									"value": "xz954",
+									"type": "text"
+								},
+								{
+									"key": "detalle",
+									"value": "Excelente atencion solo que con demora",
+									"type": "text"
+								},
+								{
+									"key": "puntajeMesa",
+									"value": "8",
+									"type": "text"
+								},
+								{
+									"key": "puntajeRestaurante",
+									"value": "9",
+									"type": "text"
+								},
+								{
+									"key": "puntajeMozo",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "puntajeCocinero",
+									"value": "9",
+									"type": "text"
+								}
+							]
+						},
+						"url": "localhost:666/encuestas"
+					},
+					"response": []
+				},
+				{
+					"name": "encuesta one",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:666/encuestas/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "logout",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:666/logout"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "mario",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": "localhost:666/login"
+			},
+			"response": []
+		}
+	]
+}

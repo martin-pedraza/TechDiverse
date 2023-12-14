@@ -1,0 +1,13 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title *ngIf="esFotoFea; else elseBlock" class="text-center fs-1">FOTO FEA</ion-title>
+        <ng-template #elseBlock><ion-title class="text-center fs-1">FOTO LINDA</ion-title></ng-template>
+    </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding" [fullscreen]="true">
+    <div  class="d-flex justify-content-center h-100 align-items-center" >
+        <ion-button (click)="TomarFoto()" expand="block" class="h-100 w-100">
+            TOMAR FOTO
+        </ion-button>
+    </div>
+</ion-content>

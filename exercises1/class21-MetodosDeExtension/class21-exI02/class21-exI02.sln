@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33717.318
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consola", "Consola\Consola.csproj", "{1778591A-4322-44C0-844C-A23F15AE10DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca", "Biblioteca\Biblioteca.csproj", "{1AD5A48A-50CB-43C1-B105-BB8F82A34EAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoTest", "ProyectoTest\ProyectoTest.csproj", "{60843A5B-0766-4F6C-A63D-5CF5172EC9C8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1778591A-4322-44C0-844C-A23F15AE10DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1778591A-4322-44C0-844C-A23F15AE10DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1778591A-4322-44C0-844C-A23F15AE10DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1778591A-4322-44C0-844C-A23F15AE10DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AD5A48A-50CB-43C1-B105-BB8F82A34EAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AD5A48A-50CB-43C1-B105-BB8F82A34EAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AD5A48A-50CB-43C1-B105-BB8F82A34EAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AD5A48A-50CB-43C1-B105-BB8F82A34EAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60843A5B-0766-4F6C-A63D-5CF5172EC9C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60843A5B-0766-4F6C-A63D-5CF5172EC9C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60843A5B-0766-4F6C-A63D-5CF5172EC9C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60843A5B-0766-4F6C-A63D-5CF5172EC9C8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CD3A7C7E-0AC4-4853-874F-12E395A74C34}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Juego de idioma</string>
+    <string name="title_activity_main">Juego de idioma</string>
+    <string name="package_name">com.pedraza.juegodeidioma</string>
+    <string name="custom_url_scheme">com.pedraza.juegodeidioma</string>
+</resources>

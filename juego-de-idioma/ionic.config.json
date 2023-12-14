@@ -1,0 +1,7 @@
+{
+  "name": "juego de idioma",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

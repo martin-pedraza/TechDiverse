@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-title class="text-center">INFORMES</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding" [fullscreen]="true" scroll-y="false">
+  <div class="height d-flex flex-column">
+
+    <div style="height: 50%;" class="d-flex justify-content-center align-items-center flex-wrap">
+      <h2 class="text-center">FOTOS FEAS</h2>
+      <div style="width: 100%;">
+        <canvas id="likesChart" class="height"></canvas>
+      </div>
+    </div>
+    
+    <div style="height: 50%;" class="d-flex justify-content-center align-items-center flex-wrap">
+      <h2 class="text-center">FOTOS LINDAS</h2>
+      <div style="height: 70%;"> 
+        <canvas id="likesChart2" class="height"></canvas>
+      </div>
+    </div>
+
+    <div #modal id="myModal" class="modal">
+      <span class="close" (click)="closeModal()">&times;</span>
+      <img class="modal-content" alt="Modal Image" />
+    </div>
+  </div>
+  
+</ion-content>

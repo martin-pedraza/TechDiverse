@@ -1,0 +1,16 @@
+C:\Users\Administrator\source\repos\excercises1\class02\class02-exI01\class02-exI01\bin\Debug\net5.0\class02-exI01.exe
+C:\Users\Administrator\source\repos\excercises1\class02\class02-exI01\class02-exI01\bin\Debug\net5.0\class02-exI01.deps.json
+C:\Users\Administrator\source\repos\excercises1\class02\class02-exI01\class02-exI01\bin\Debug\net5.0\class02-exI01.runtimeconfig.json
+C:\Users\Administrator\source\repos\excercises1\class02\class02-exI01\class02-exI01\bin\Debug\net5.0\class02-exI01.runtimeconfig.dev.json
+C:\Users\Administrator\source\repos\excercises1\class02\class02-exI01\class02-exI01\bin\Debug\net5.0\class02-exI01.dll
+C:\Users\Administrator\source\repos\excercises1\class02\class02-exI01\class02-exI01\bin\Debug\net5.0\class02-exI01.pdb
+C:\Users\Administrator\source\repos\excercises1\class02\class02-exI01\class02-exI01\obj\Debug\net5.0\class02-exI01.csproj.AssemblyReference.cache
+C:\Users\Administrator\source\repos\excercises1\class02\class02-exI01\class02-exI01\obj\Debug\net5.0\class02-exI01.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\source\repos\excercises1\class02\class02-exI01\class02-exI01\obj\Debug\net5.0\class02-exI01.AssemblyInfoInputs.cache
+C:\Users\Administrator\source\repos\excercises1\class02\class02-exI01\class02-exI01\obj\Debug\net5.0\class02-exI01.AssemblyInfo.cs
+C:\Users\Administrator\source\repos\excercises1\class02\class02-exI01\class02-exI01\obj\Debug\net5.0\class02-exI01.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\excercises1\class02\class02-exI01\class02-exI01\obj\Debug\net5.0\class02-exI01.dll
+C:\Users\Administrator\source\repos\excercises1\class02\class02-exI01\class02-exI01\obj\Debug\net5.0\refint\class02-exI01.dll
+C:\Users\Administrator\source\repos\excercises1\class02\class02-exI01\class02-exI01\obj\Debug\net5.0\class02-exI01.pdb
+C:\Users\Administrator\source\repos\excercises1\class02\class02-exI01\class02-exI01\obj\Debug\net5.0\class02-exI01.genruntimeconfig.cache
+C:\Users\Administrator\source\repos\excercises1\class02\class02-exI01\class02-exI01\obj\Debug\net5.0\ref\class02-exI01.dll

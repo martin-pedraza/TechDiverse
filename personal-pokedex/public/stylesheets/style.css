@@ -1,0 +1,147 @@
+#indexBackground {
+	background: url('./../img/background.jpg') no-repeat fixed center;
+	background-size: cover;
+}
+
+#errorBackground {
+	background: url('./../img/pikachuBackground.png') no-repeat fixed center;
+	background-size: cover;
+}
+
+/*Header tags*/
+header {
+	top: 60%;
+}
+
+header .buttonIntro {
+	border: 2px solid white;
+	color: white;
+	transition: all 0.5s;
+}
+
+header .buttonIntro:hover {
+	border: none;
+	color: black;
+}
+
+header .buttonIntro span {
+	width: 0%;
+	z-index: -1;
+	transition: 0.5s;
+}
+
+header .buttonIntro:hover span {
+	width: 100%;
+}
+
+/*Nav tags*/
+nav .hamburguer-button:hover {
+	transform: rotateZ(-45deg);
+}
+
+nav .typesHome {
+	text-decoration: none;
+	color: black;
+}
+
+nav .typesHome:hover:after {
+	content: ' - HOME';
+	text-decoration: none;
+	color: black;
+}
+
+nav .typesHome:hover {
+	color: black;
+}
+
+nav ul li {
+	margin: 10px;
+	padding: 10px;
+	position: relative;
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: black;
+}
+
+nav ul li a:hover {
+	color: black;
+}
+
+nav ul li::after {
+	content: '';
+	height: 3px;
+	width: 0;
+	background: black;
+	position: absolute;
+	left: 0;
+	bottom: 0px;
+	transition: 0.5s;
+}
+
+nav ul li:hover::after {
+	width: 100%;
+}
+
+/*Main tags*/
+main .card {
+	width: 18rem;
+}
+
+main .card:hover .card-img-top {
+	filter: grayscale(0);
+}
+
+main .card-img-top {
+	filter: grayscale(1);
+	z-index: -1;
+}
+
+main .card:before {
+	content: '';
+	position: absolute;
+	height: 30rem;
+	width: 40px;
+	background: #f3f3f3;
+	filter: blur(1px);
+	opacity: 0.9;
+	top: -30px;
+	transition: 0.8s;
+	transform: rotate(-20deg) translateX(-100px);
+}
+
+/*Section tags*/
+section .card-text {
+	display: block;
+}
+
+section .description {
+	display: none;
+}
+
+section .card-body:hover .card-text {
+	display: none;
+}
+
+section .card-body:hover .description {
+	display: block;
+}
+
+@media (max-width: 1200px) {
+	main .card-img-top {
+		filter: grayscale(0);
+	}
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+	section .img-fluid {
+		display: none;
+	}
+}
+
+@media (min-width: 1200px) {
+	main .card:hover:before {
+		transform: rotate(-20deg) translate(30rem, 70px);
+	}
+}

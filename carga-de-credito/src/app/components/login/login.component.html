@@ -1,0 +1,49 @@
+<ion-content class="ion-padding" [fullscreen]="true" scroll-y="false" >
+  <div class="d-flex h-100 m-0 justify-content-between flex-column">
+    <ion-img
+      src="./../../../assets/celulares.jpg"
+      alt="The Wisconsin State Capitol building in Madison, WI at night"
+      class="h-50"
+    ></ion-img>
+    
+    <ion-list>
+      <ion-item>
+        <ion-input
+          label="Correo electrónico"
+          labelPlacement="stacked"
+          placeholder="Ejemplo: correo@correo.com"
+          type="email"
+          [(ngModel)]="usuario"
+        >
+        </ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-input
+          label="Contraseña"
+          labelPlacement="stacked"
+          type="password"
+          placeholder="Ingrese su contraseña"
+          [(ngModel)]="clave"
+        >
+        </ion-input>
+      </ion-item>
+    </ion-list>
+    
+    <div class="d-flex justify-content-evenly">
+      <ion-button (click)="AutocompletarUno()" shape="round">
+        <ion-icon name="id-card"></ion-icon>
+      </ion-button>
+      <ion-button (click)="AutocompletarDos()" shape="round"
+        ><ion-icon name="qr-code-outline"></ion-icon
+      ></ion-button>
+      <ion-button (click)="AutocompletarTres()" shape="round"
+        ><ion-icon name="cash-outline"></ion-icon
+      ></ion-button>
+    </div>
+    
+    <ion-button expand="block" (click)="Acceder(usuario, clave)" shape="round"
+      >Acceder</ion-button
+    >
+  </div>
+</ion-content>

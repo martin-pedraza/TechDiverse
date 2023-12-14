@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html class="h-100">
+	<%- include('./partials/head') %>
+
+	<body style="background-color: black" class="d-flex h-100">
+		<%- include('./partials/nav') %>
+
+		<section class="container align-self-center">
+			<div class="card mb-3 bg-transparent">
+				<div class="row g-0">
+					<div class="col-md-4">
+						<img
+							src="/<%=pokemonDetail.img%>"
+							class="img-fluid rounded-start"
+							alt="pokemon"
+						/>
+					</div>
+					<div class="col-md-8">
+						<div class="card-body text-white">
+							<h5 class="card-title fs-1 fw-bold"><%= pokemonDetail.name %></h5>
+							<p class="description"><%= pokemonDetail.descripcion %></p>
+							<p class="card-text"><%= pokemonDetail.mainDescripcion %></p>
+							<p class="card-text">
+								<small class="text-muted"
+									>Type: <%= pokemonDetail.type %></small
+								>
+							</p>
+							<p class="card-text">
+								<small class="text-muted"
+									>Strong Against: <%= pokemonDetail.strongAgainst %></small
+								>
+							</p>
+							<p class="card-text">
+								<small class="text-muted"
+									>Weak Against: <%= pokemonDetail.weakAgainst %></small
+								>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<%- include('./partials/footer') %>
+	</body>
+</html>

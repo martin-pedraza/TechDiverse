@@ -1,0 +1,17 @@
+<ion-content [fullscreen]="true" scroll-y="false" >
+  <div class="d-flex flex-column justify-content-around h-100" id="fondo">
+    <div class="h-50">
+      <div class="d-flex justify-content-around">
+        <ion-button fill="fill" color="success" (click)="AutocompletarUno()">Tester</ion-button>
+        <ion-button fill="fill" color="success" (click)="AutocompletarDos()">Invitado</ion-button>
+        <ion-button fill="fill" color="success" (click)="AutocompletarTres()">Usuario</ion-button>
+      </div>
+    </div>
+
+    <ion-input label="Correo electrónico" label-placement="floating" fill="solid" placeholder="ejemplo@prueba.com" type="email" [(ngModel)]="usuario"></ion-input>
+    <ion-input label="Contraseña" label-placement="floating" fill="solid" type="password" [(ngModel)]="clave"></ion-input>
+    
+    <ion-button fill="solid" color="success" expand="block" (click)="Acceder(usuario, clave)">Acceder</ion-button>
+    
+  </div>
+</ion-content>

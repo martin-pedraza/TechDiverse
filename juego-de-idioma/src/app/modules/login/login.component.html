@@ -1,0 +1,41 @@
+<ion-content [fullscreen]="true" scroll-y="false" >
+  <div class="fondo h-100 d-flex flex-column justify-content-end">
+
+    <ion-fab slot="fixed" vertical="top" horizontal="start">
+      <ion-fab-button  color="warning" >
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-list side="bottom">
+        <ion-fab-button  color="warning" (click)="AutocompletarUno()">
+          <ion-icon name="person-circle-outline"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button  color="warning" (click)="AutocompletarDos()">
+          <ion-icon name="people-circle-outline"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button  color="warning" (click)="AutocompletarTres()">
+          <ion-icon name="person-outline"></ion-icon>
+        </ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>
+
+    <div>
+      <ion-input
+        label="Correo electrónico"
+        fill="solid"
+        placeholder="ejemplo@prueba.com"
+        type="email"
+        [(ngModel)]="usuario"
+      ></ion-input>
+      <ion-input
+        label="Contraseña"
+        fill="solid"
+        type="password"
+        [(ngModel)]="clave"
+      ></ion-input>
+    </div>
+
+    <ion-button color="warning" (click)="Acceder(usuario, clave)"
+      >Acceder</ion-button
+    >
+  </div>
+</ion-content>

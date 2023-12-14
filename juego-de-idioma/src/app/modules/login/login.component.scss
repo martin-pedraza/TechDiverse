@@ -1,0 +1,24 @@
+.fondo {
+  background-image: url("./../../../assets/fondo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.form-container {
+  width: 80%; /* Adjust the width as needed */
+  margin: 20px auto; /* Adjust the margin as needed */
+  padding: 20px; /* Adjust the padding as needed */
+  background-color: white; /* Set your desired background color */
+  border-radius: 10px; /* Adjust the border-radius as needed */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adjust box-shadow as needed */
+}
+
+ion-input {
+  width: 100%;
+  margin-bottom: 10px; /* Adjust the margin as needed */
+}
+
+ion-button {
+  width: 100%;
+}

@@ -1,0 +1,16 @@
+C:\Users\Administrator\source\repos\excercises1\class01-exI09\class01-exI09\bin\Debug\net5.0\class01-exI09.exe
+C:\Users\Administrator\source\repos\excercises1\class01-exI09\class01-exI09\bin\Debug\net5.0\class01-exI09.deps.json
+C:\Users\Administrator\source\repos\excercises1\class01-exI09\class01-exI09\bin\Debug\net5.0\class01-exI09.runtimeconfig.json
+C:\Users\Administrator\source\repos\excercises1\class01-exI09\class01-exI09\bin\Debug\net5.0\class01-exI09.runtimeconfig.dev.json
+C:\Users\Administrator\source\repos\excercises1\class01-exI09\class01-exI09\bin\Debug\net5.0\class01-exI09.dll
+C:\Users\Administrator\source\repos\excercises1\class01-exI09\class01-exI09\bin\Debug\net5.0\class01-exI09.pdb
+C:\Users\Administrator\source\repos\excercises1\class01-exI09\class01-exI09\obj\Debug\net5.0\class01-exI09.csproj.AssemblyReference.cache
+C:\Users\Administrator\source\repos\excercises1\class01-exI09\class01-exI09\obj\Debug\net5.0\class01-exI09.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\source\repos\excercises1\class01-exI09\class01-exI09\obj\Debug\net5.0\class01-exI09.AssemblyInfoInputs.cache
+C:\Users\Administrator\source\repos\excercises1\class01-exI09\class01-exI09\obj\Debug\net5.0\class01-exI09.AssemblyInfo.cs
+C:\Users\Administrator\source\repos\excercises1\class01-exI09\class01-exI09\obj\Debug\net5.0\class01-exI09.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\excercises1\class01-exI09\class01-exI09\obj\Debug\net5.0\class01-exI09.dll
+C:\Users\Administrator\source\repos\excercises1\class01-exI09\class01-exI09\obj\Debug\net5.0\refint\class01-exI09.dll
+C:\Users\Administrator\source\repos\excercises1\class01-exI09\class01-exI09\obj\Debug\net5.0\class01-exI09.pdb
+C:\Users\Administrator\source\repos\excercises1\class01-exI09\class01-exI09\obj\Debug\net5.0\class01-exI09.genruntimeconfig.cache
+C:\Users\Administrator\source\repos\excercises1\class01-exI09\class01-exI09\obj\Debug\net5.0\ref\class01-exI09.dll

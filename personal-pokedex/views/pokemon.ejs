@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+  <%- include('./partials/head') %>
+
+  <body style="background-color: black;" class="container">
+
+    <%- include('./partials/nav') %>
+
+    <main class="d-flex justify-content-around flex-wrap py-4">
+      <% for (let i=0; i<pokemonType.length; i++) { %>
+
+      <a class="card my-2 bg-transparent text-decoration-none border border-secondary position-relative overflow-hidden" href="/details/<%=pokemonType[i].name %>">
+        <img src="/<%=pokemonType[i].img%>" class="card-img-top" alt="pokemon">
+        <div class="card-body">
+          <p class="card-text text-center fs-1 fw-bold text-white"><%=pokemonType[i].name %></p>
+        </div>
+      </a>
+        
+      <% } %>
+    </main>
+
+    <%- include('./partials/footer') %>
+
+  </body>
+</html>
