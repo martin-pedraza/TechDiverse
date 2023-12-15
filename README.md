@@ -21,21 +21,24 @@ This repository contains a variety of projects developed as part of assignments 
 ### 5. Exercises2
    - Description: It represents a curated collection of assignments provided by the instructor to facilitate hands-on practice with PHP, emphasizing backend development. The project is tailored for honing PHP skills and employs PHPMyAdmin as a MySQL database management tool. Focused on backend functionality, the exercises guide learners through practical scenarios, fostering a deep understanding of PHP in conjunction with MySQL databases. The utilization of the SLIM framework enhances the development process, providing a streamlined and efficient approach to building robust backend solutions. "Exercises2" serves as an invaluable resource for individuals looking to sharpen their PHP skills and gain proficiency in backend development within the context of the SLIM framework and MySQL databases.
 
-### 6. Juego de Memoria
+### 6. Juego de Idioma
+   - Description: An Android application built with Ionic and Angular, designed to assist children in learning numbers, colors, and animals in three languages: Spanish, Portuguese, and English. The app provides an engaging and interactive platform where children can explore and reinforce their language skills, fostering a multilingual educational experience in a fun and intuitive way
+
+### 7. Juego de Memoria
    - Description: A mobile application developed for Android, utilizing Ionic and Angular in conjunction with a Firebase database. The game presents players with various levels where the objective is to uncover matching pairs of tiles featuring identical images. The Firebase database records user progress, enabling the creation of a leaderboard that highlights those who complete the game in the shortest time across different difficulty levels. This application seamlessly integrates Ionic and Angular to deliver an engaging and interactive gaming experience, complemented by Firebase for efficient data storage and retrieval, making it an entertaining and competitive memory challenge for users.
 
-### 7. Personal Pokedex
+### 8. Personal Pokedex
    - Description: Personal Pokedex application for [specific purpose].
    - URL: [tame-pink-sheep-gear.cyclic.app](https://tame-pink-sheep-gear.cyclic.app/)
 
-### 8. Relevamiento Visual
+### 9. Relevamiento Visual
    - Description: The project is a mobile application for Android, developed with Ionic and Angular, empowering users to capture and classify images of buildings as aesthetically pleasing or unattractive. Users can explore a collective gallery of photos contributed by all users and express their preferences by liking their favorite images. Leveraging Firebase as the backend database, the application dynamically generates bar and pie charts, illustrating the popularity of photos based on user likes. This interactive platform not only enables visual documentation of architectural perceptions but also fosters community engagement by allowing users to appreciate and vote for their preferred images, contributing to an engaging and visually informative experience.
 
-### 9. Sala
+### 10. Sala
    - Description: The project refers to a web-based gaming platform created in Angular, hosted on Firebase, and utilizing the Firebase database. The platform encompasses four distinct games: Hangman, Trivia, Higher or Lower, and a Stop-the-Clock challenge. Leveraging Angular for the frontend and Firebase for both hosting and data storage, this interactive web application offers users a diverse selection of engaging games. Whether guessing words, answering trivia questions, predicting numerical sequences, or stopping the clock at the right moment, players can enjoy a variety of challenges while Firebase seamlessly manages the hosting and data aspects, contributing to a dynamic and entertaining online gaming experience.
    - URL: [gameroom-97620.web.app](https://gameroom-97620.web.app/home)
 
-### 10. Slim PHP MySQL Deployment
+### 11. Slim PHP MySQL Deployment
    - Description: The project is a PHP API designed for a restaurant ordering system, facilitating seamless communication between waitstaff and kitchen staff through HTTP methods. Built with the SLIM framework, the API streamlines the entire order process, allowing waiters and chefs to interact with MySQL databases to manage and fulfill orders. Leveraging PHP for server-side functionality and SLIM for a lightweight and efficient framework, this API ensures a responsive and organized workflow within a restaurant setting. With this deployment, restaurant staff can efficiently handle the lifecycle of orders, from creation to fulfillment, enhancing the operational efficiency of the restaurant's ordering system.
    - URL: [slim-php-mysql-deployment-production-c6d9.up.railway.app](https://slim-php-mysql-deployment-production-c6d9.up.railway.app/)
 
