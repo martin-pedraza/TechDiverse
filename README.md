@@ -28,7 +28,7 @@ This repository contains a variety of projects developed as part of assignments 
    - Description: A mobile application developed for Android, utilizing Ionic and Angular in conjunction with a Firebase database. The game presents players with various levels where the objective is to uncover matching pairs of tiles featuring identical images. The Firebase database records user progress, enabling the creation of a leaderboard that highlights those who complete the game in the shortest time across different difficulty levels. This application seamlessly integrates Ionic and Angular to deliver an engaging and interactive gaming experience, complemented by Firebase for efficient data storage and retrieval, making it an entertaining and competitive memory challenge for users.
 
 ### 8. Personal Pokedex
-   - Description: Personal Pokedex application for [specific purpose].
+   - Description: Personal Pokedex is a web development project leveraging HTML and CSS to create a dynamic platform for exploring information about Pokémon. Utilizing a JSON dataset, the application dynamically presents details about each Pokémon based on its type. The user-friendly interface allows seamless navigation through various Pokémon types, providing a comprehensive view of their characteristics. This project showcases my proficiency in front-end technologies and data consumption, demonstrating an interactive and visually appealing solution for Pokémon enthusiasts.
    - URL: [tame-pink-sheep-gear.cyclic.app](https://tame-pink-sheep-gear.cyclic.app/)
 
 ### 9. Relevamiento Visual
