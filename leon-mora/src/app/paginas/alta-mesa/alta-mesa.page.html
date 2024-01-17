@@ -1,0 +1,93 @@
+<div class="main">
+  <ion-content [fullscreen]="true" class="contenedor">
+    <ion-card class="card" style="margin-top: 5%;">
+      <ion-card-content>
+        <form (submit)="crearMesa(f)" #f="ngForm">
+          <h1 class="center-title fs-1">Alta Mesa</h1>
+          <ion-img
+            src="assets/images/mesa.png"
+            ></ion-img>
+            <ion-button expand="block" 
+                        shape="round" 
+                        size="medium" 
+                        (click)="takePicture()"
+                        [disabled]="fotoMesa != ''"
+                        >
+                        <p *ngIf="fotoMesa == ''" style="font-family: Font1; font-size: 20px;">Sacar foto mesa &nbsp;</p>
+                        <p *ngIf="fotoMesa != ''" style="font-family: Font1; font-size: 20px;">Foto ✅ &nbsp;</p>
+                        <ion-icon fill="solid" name="camera"></ion-icon>
+            </ion-button>
+
+          <ion-item class="ion-item">
+            <ion-input class="ionput" 
+                       aria-label="Numero" 
+                       [formControl]="numero" 
+                       [clearOnEdit]="true" 
+                       type="number"
+                       required 
+                       placeholder="🔂 Numero" 
+                       full
+            ></ion-input>
+          </ion-item>
+
+          <div class="alert alert-danger mensajeError"
+            [hidden]="numero.valid || (numero.pristine && numero.untouched)">
+
+            <span *ngIf="numero.errors?.['required']">
+              Este campo es obligatorio
+            </span>
+          </div>
+
+          <ion-item class="ion-item">
+            <ion-input class="ionput" 
+                       [formControl]="capacidad" 
+                       aria-label="Capacidad" 
+                       [clearOnEdit]="true" 
+                       type="number"
+                       required 
+                       placeholder="👨‍👩‍👦‍👦 Capacidad" 
+                       [counter]="true" 
+                       full
+            ></ion-input>
+          </ion-item>
+
+          <div class="alert alert-danger mensajeError"
+            [hidden]="capacidad.valid || (capacidad.pristine && capacidad.untouched)">
+            <span *ngIf="capacidad.errors?.['required']">
+              Este campo es obligatorio
+            </span>
+          </div>
+
+          <ion-item class="ion-item">
+            <ion-select
+              required
+              placeholder="Tipo de mesa"
+              (ionChange)="cambiarTipo($event)"
+              style="font-size: 1.5em"
+            >
+              <ion-select-option value="Normal">Normal</ion-select-option>
+              <ion-select-option value="VIP">VIP</ion-select-option>
+              <ion-select-option value="Apto Niños">Apto Niños</ion-select-option>
+              <ion-select-option value="Discapacitados">Discapacitados</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <br>
+            <ion-button expand="block" 
+                        shape="round" 
+                        fill="outline" 
+                        size="large" 
+                        type="submit" 
+                        [disabled]="!(this.numero.valid && this.capacidad.valid && this.fotoMesa != '')"
+                        >
+              <p style="font-family: Font1; font-size: 20px;">Dar de alta</p>
+            </ion-button>
+        </form>
+      </ion-card-content>
+    </ion-card>
+
+    <div *ngIf="showSpinner" class="custom-spinner">
+      <img src="/assets/images/logo.png" />
+    </div>
+  </ion-content>
+</div>

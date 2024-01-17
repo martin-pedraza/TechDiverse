@@ -1,0 +1,35 @@
+<ion-content>
+  <div class="mainSelect">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title class="text-center">Lista de pedidos</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <div>
+      <div style="width: 100%;">
+        <ion-card *ngFor="let pedido of pedidosList">
+          <ion-card-content>
+            <ion-card-title>Mesa: {{pedido.mesa}}</ion-card-title>
+            <ion-card-subtitle>Cliente: {{pedido.clienteNombre}}</ion-card-subtitle>
+            <ion-card-subtitle>Estimado entrega: {{pedido.tiempo}} mins</ion-card-subtitle>
+          </ion-card-content>
+          <ion-list *ngFor="let prod of pedido.lista">
+            <ion-item *ngIf="prod.tipo === tipoUsuario">
+              <ion-thumbnail slot="start">
+                <img alt="Silhouette of mountains" src="{{prod.fotoUno}}" />
+              </ion-thumbnail>
+              <ion-label>{{prod.nombre}}</ion-label>
+              <ion-note slot="end">{{prod.cantidad}}</ion-note>
+            </ion-item>
+          </ion-list>
+          <ion-button  expand="block" color="warning" (click)="pedidoListo(pedido)">Pedido listo</ion-button>
+        </ion-card>
+      </div>
+      <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+        <ion-fab-button (click)="cerrarSesion()">
+          <ion-icon name="log-out-outline"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </div>
+  </div>
+</ion-content>

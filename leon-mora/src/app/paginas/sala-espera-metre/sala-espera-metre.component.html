@@ -1,0 +1,84 @@
+<ion-content>
+  <div
+    class="main d-flex align-items-center flex-column justify-content-center"
+  >
+    <ion-header>
+      <ion-toolbar>
+        <ion-title class="text-center">{{ titulo }}</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-list [inset]="true" *ngIf="titulo == 'En espera'" class="m-auto">
+      <ion-item
+        *ngFor="let cl of listaClientes"
+        (click)="
+          asignarMesa(
+            cl.id,
+            cl.apellido.toUpperCase() + ', ' + cl.nombre.toUpperCase()
+          )
+        "
+      >
+        <ion-label class="fs-4 text-uppercase d-flex justify-content-between">
+          {{ cl.nombre }} {{ cl.apellido }}
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-list [inset]="true" *ngIf="titulo == 'Mesas libres'" class="m-auto">
+      <ion-item *ngFor="let mesa of listaMesaActivo">
+        <ion-label class="fs-4 d-flex justify-content-between">
+          N°: {{ mesa.numero }} - {{ mesa.tipo }} para {{ mesa.capacidad }}
+          <button
+            type="button"
+            class="btn btn-success btn-sm"
+            *ngIf="modoAsignar"
+            (click)="reservarMesa(mesa.id, mesa.numero)"
+          >
+            <ion-icon
+              name="checkmark-circle"
+              style="height: 100%; width: 100%"
+            ></ion-icon>
+          </button>
+        </ion-label>
+      </ion-item>
+      <ion-item *ngIf="modoAsignar">
+        <button
+          type="button"
+          class="btn btn-danger btn-lg"
+          (click)="rechazarCliente()"
+        >
+          Rechazar cliente
+        </button>
+      </ion-item>
+    </ion-list>
+    <ion-list [inset]="true" *ngIf="titulo == 'Mesas asignadas'" class="m-auto">
+      <ion-item *ngFor="let mesa of listaMesaAsignada">
+        <ion-label class="fs-4 d-flex justify-content-between">
+          N°: {{ mesa.numero }} - {{ mesa.cliente }}
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div *ngIf="showSpinner" class="custom-spinner">
+    <img src="/assets/images/logo.png" />
+  </div>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button color="primary" (click)="cerrarSesion()">
+      <ion-icon name="log-out-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+<ion-footer class="d-flex">
+  <ion-tab-button (click)="cambiarTitulo('En espera')">
+    <ion-icon name="list-outline"></ion-icon>
+    En espera
+  </ion-tab-button>
+  <ion-tab-button (click)="cambiarTitulo('Mesas libres')">
+    <ion-icon name="restaurant-outline"></ion-icon>
+    Mesas libres
+  </ion-tab-button>
+  <ion-tab-button (click)="cambiarTitulo('Mesas asignadas')">
+    <ion-icon name="fast-food-outline"></ion-icon>
+    Asignadas
+  </ion-tab-button>
+</ion-footer>

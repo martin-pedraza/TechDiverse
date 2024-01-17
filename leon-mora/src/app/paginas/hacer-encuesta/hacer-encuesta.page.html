@@ -1,0 +1,88 @@
+<div class="mainSelect">
+<div class="container">
+  
+  <div class="Encuesta" *ngIf="encuesta">
+    <h1 style="margin-top: 2vh;text-align: center;font-family: Font1;font-size: 40px;">&nbsp; ✍🏻 Encuesta ✍🏻</h1>
+    
+    <ion-card>
+      <ion-card-content style="text-align: center;">
+        <!-- input -->
+        <form (ngSubmit)="enviarResena()" [formGroup]="resenaForm">
+
+          <label for="story">Breve reseña:</label>
+          <textarea formControlName="descripcion" id="story" name="story" rows="3" cols="40"></textarea>
+          <br>
+          <ion-range
+            aria-label="Custom range"
+            [min]="1"
+            [max]="5"
+            formControlName="calificacion"
+            [pin]="true"
+            [ticks]="true"
+            [snaps]="true"
+            [pinFormatter]="pinFormatter"
+          >
+            <ion-label slot="start">⭐</ion-label>
+            <ion-label slot="end">🌟</ion-label>
+          </ion-range>
+
+          <br>
+          <label>Estado de la comida: </label>
+          <ion-radio-group formControlName="estadoComida" style="display: flex; flex-direction: column;">
+            <ion-radio color="warning" value="excelente">Excelente </ion-radio>
+            <ion-radio color="warning" value="bueno">Buena</ion-radio>
+            <ion-radio color="warning" value="regular">Regular </ion-radio>
+            <ion-radio color="warning" value="malo">Mala </ion-radio>
+          </ion-radio-group>
+
+          <br>
+
+          <div>
+            <label for="estadoLimpieza">Estado de la limpieza: </label>
+            <select formControlName="estadoLimpieza" name="estadoLimpieza" id="estadoLimpieza">
+              <option value="excelente">Excelente</option>
+              <option value="bueno">Bueno</option>
+              <option value="regular">Regular</option>
+              <option value="malo">Malo</option>
+            </select>
+          </div>
+
+          <br>
+          <br>
+          <ion-checkbox color="warning" formControlName="mostrarResena">Los usuarios veran mi reseña</ion-checkbox>
+          <br>
+          <ion-button color="warning" type="submit" [disabled]="!resenaForm.valid">Subir reseña</ion-button>
+
+        </form>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+
+
+    
+  
+
+  <ion-content *ngIf="!encuesta">
+    <h1 style="margin-top: 2vh;text-align: center;font-family: Font1;font-size: 40px;">&nbsp; ✍🏻 Encuestas ✍🏻</h1>
+    <canvas id = "grafico"></canvas>
+    <ion-list>
+      <ion-card *ngFor="let encuesta of this.encuestas">
+        <ion-card-header style="background-color: lightyellow; align-content: center; justify-content: center;text-align: center;">
+          <h1>{{pinFormatter(encuesta.calificacion)}}</h1>
+        </ion-card-header>
+        <ion-card-content style="text-align: center;">
+          <ion-label>
+            <p style="font-size: larger;"><strong> 👥 Descripcion: </strong></p>
+            <p style="font-family: Arial; font-size: large;">{{ encuesta.descripcion }}</p>
+            <p style="font-size: larger;"><strong>Comida :</strong> {{encuesta.estadoComida}}</p>
+            <br>
+            <p style="font-size: larger;"><strong>Limpieza:</strong> {{encuesta.estadoLimpieza}}</p>
+          </ion-label>
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+  </ion-content>
+
+  </div>
+</div>

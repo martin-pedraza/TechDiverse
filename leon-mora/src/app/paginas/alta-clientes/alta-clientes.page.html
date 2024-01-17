@@ -1,0 +1,198 @@
+<div class="main">
+  <ion-content [fullscreen]="true" class="contenedor">
+    <ion-card class="card" style="margin-top: 5%">
+      <ion-card-content>
+        <form (submit)="crearCliente()">
+          <h1 class="center-title fs-1">Alta cliente</h1>
+          <hr class="hr" />
+
+          <zxing-scanner
+            *ngIf="mostrarScanner"
+            #scanner
+            (scanSuccess)="scanSuccessHandler($event)"
+            [formats]="allowedFormats"
+          ></zxing-scanner>
+
+          <ion-segment value="registrado">
+            <ion-segment-button
+              value="registrado"
+              (click)="cambiarAnonimo(false)"
+            >
+              <ion-label>Registrado</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="anonimo" (click)="cambiarAnonimo(true)">
+              <ion-label>Anonimo</ion-label>
+            </ion-segment-button>
+          </ion-segment>
+
+          <ion-item class="ion-item">
+            <ion-input
+              class="ionput"
+              aria-label="Nombre"
+              [formControl]="nombre"
+              [clearOnEdit]="true"
+              type="text"
+              required
+              placeholder="🤖 Nombre"
+              full
+            ></ion-input>
+          </ion-item>
+
+          <div
+            class="alert alert-danger mensajeError"
+            [hidden]="nombre.valid || (nombre.pristine && nombre.untouched)"
+          >
+            <span *ngIf="nombre.errors?.['required']">
+              Este campo es obligatorio
+            </span>
+          </div>
+
+          <ion-item class="ion-item">
+            <ion-input
+              class="ionput"
+              [formControl]="apellido"
+              aria-label="Apellido"
+              [clearOnEdit]="true"
+              type="text"
+              required
+              placeholder="👪 Apellido"
+              [counter]="true"
+              full
+            ></ion-input>
+          </ion-item>
+
+          <div
+            class="alert alert-danger mensajeError"
+            [hidden]="apellido.valid || (apellido.pristine && apellido.untouched)"
+          >
+            <span *ngIf="apellido.errors?.['required']">
+              Este campo es obligatorio
+            </span>
+          </div>
+
+          <ion-item class="ion-item">
+            <ion-input
+              class="ionput"
+              [formControl]="dni"
+              aria-label="Dni"
+              [clearOnEdit]="true"
+              type="number"
+              required
+              placeholder="🆔 Dni"
+              [counter]="true"
+              full
+            ></ion-input>
+          </ion-item>
+
+          <div
+            class="alert alert-danger mensajeError"
+            [hidden]="dni.valid || (dni.pristine && dni.untouched)"
+          >
+            <span *ngIf="dni.errors?.['required']">
+              Este campo es obligatorio
+            </span>
+          </div>
+
+          <ion-item class="ion-item">
+            <ion-input
+              class="ionput"
+              aria-label="Mail"
+              [formControl]="mail"
+              [clearOnEdit]="true"
+              type="mail"
+              required
+              placeholder="📩 Correo"
+              full
+            ></ion-input>
+          </ion-item>
+
+          <div
+            class="alert alert-danger mensajeError"
+            [hidden]="mail.valid || (mail.pristine && mail.untouched)"
+          >
+            <span *ngIf="mail.errors?.['required']">
+              Este campo es obligatorio
+            </span>
+            <span *ngIf="mail.errors?.['email']"> Formato no válido </span>
+          </div>
+
+          <ion-item class="ion-item">
+            <ion-input
+              class="ionput"
+              aria-label="password"
+              [formControl]="clave"
+              [clearOnEdit]="true"
+              type="password"
+              required
+              placeholder="🔑 Contraseña"
+              full
+            ></ion-input>
+          </ion-item>
+
+          <div
+            class="alert alert-danger mensajeError"
+            [hidden]="clave.valid || (clave.pristine && clave.untouched)"
+          >
+            <span *ngIf="clave.errors?.['required']">
+              Este campo es obligatorio
+            </span>
+          </div>
+
+          <ion-button
+            class="col-12"
+            shape="round"
+            fill="outline"
+            size="large"
+            (click)="presentActionSheet()"
+            [disabled]="foto != ''"
+          >
+            <ion-icon
+              name="checkmark-circle-outline"
+              *ngIf="foto != ''"
+            ></ion-icon>
+            <p style="font-family: Font1; font-size: 20px">FOTO</p>
+          </ion-button>
+
+          <br />
+          <div class="d-flex">
+            <ion-button
+              class="col-6"
+              shape="round"
+              fill="outline"
+              size="large"
+              type="submit"
+              [disabled]="anonimo ?
+                          !(this.nombre.valid && this.foto != ''):
+                          !(this.nombre.valid && this.apellido.valid && this.dni.valid && this.foto != '' && this.mail.valid && this.clave.valid)"
+            >
+              <p style="font-family: Font1; font-size: 20px">REGISTRAR</p>
+            </ion-button>
+            <ion-button
+              class="col-6"
+              shape="round"
+              fill="outline"
+              size="large"
+              routerLink="/inicio-sesion"
+            >
+              <p style="font-family: Font1; font-size: 20px">VOLVER</p>
+            </ion-button>
+          </div>
+        </form>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-fab horizontal="center" vertical="bottom" class="boton-logout">
+      <ion-fab-button color="warning" title="Cerrar sesión">
+        <ion-icon
+          name="qr-code-outline"
+          color="dark"
+          (click)="enableScanner()"
+          *ngIf="!mostrarScanner"
+        ></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    <div *ngIf="showSpinner" class="custom-spinner">
+      <img src="/assets/images/logo.png" />
+    </div>
+  </ion-content>
+</div>

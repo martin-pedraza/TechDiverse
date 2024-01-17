@@ -1,0 +1,113 @@
+<div class="main">
+  <ion-content [fullscreen]="true" class="contenedor">
+    <ion-card class="card" style="margin-top: 5%">
+      <ion-card-content>
+        <img src="/assets/images/logo.png" alt="">
+        <form (submit)="acceder()" [formGroup]="form">
+          <h1 class="center-title fs-1">INICIO DE SESIÓN</h1>
+          <hr class="hr" />
+
+          <ion-fab vertical="top" horizontal="start">
+            <ion-fab-button color="tertiary">
+              <ion-icon name="people"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-list side="bottom">
+              <ion-fab-button color="warning" (click)="autocompletarFormulario('duenio')">
+                <img src="/assets/images/duenio.png" alt="">
+              </ion-fab-button>
+              <ion-fab-button color="warning" (click)="autocompletarFormulario('recepcionista')">
+                <img src="/assets/images/recepcionista.png" alt="">
+              </ion-fab-button>
+              <ion-fab-button color="warning" (click)="autocompletarFormulario('mozo')">
+                <img src="/assets/images/mozo.png" alt="">
+              </ion-fab-button>
+              <ion-fab-button color="warning" (click)="autocompletarFormulario('cocinero')">
+                <img src="/assets/images/cocinero.png" alt="">
+              </ion-fab-button>
+              <ion-fab-button color="warning" (click)="autocompletarFormulario('bartender')">
+                <img src="/assets/images/bartender.png" alt="">
+              </ion-fab-button>
+              <ion-fab-button color="warning" (click)="autocompletarFormulario('clientes')">
+                <img src="/assets/images/clientes.png" alt="">
+              </ion-fab-button>
+            </ion-fab-list>
+          </ion-fab>
+          
+          <ion-item class="ion-item">
+            <ion-input
+              class="ionput"
+              aria-label="Mail"
+              formControlName="mail"
+              [clearOnEdit]="true"
+              type="mail"
+              required
+              placeholder="📩 Correo"
+              full
+            ></ion-input>
+          </ion-item>
+
+          <div
+            class="alert alert-danger mensajeError"
+            [hidden]="mail?.valid || (mail?.pristine && mail?.untouched)"
+          >
+            <span *ngIf="mail?.errors?.['required']">
+              Este campo es obligatorio
+            </span>
+            <span *ngIf="mail?.errors?.['email']">
+              Formato no válido
+            </span>
+          </div>
+
+          <ion-item class="ion-item">
+            <ion-input
+              class="ionput"
+              aria-label="password"
+              formControlName="clave"
+              [clearOnEdit]="true"
+              type="password"
+              required
+              placeholder="🔑 Contraseña"
+              full
+            ></ion-input>
+          </ion-item>
+
+          <div
+            class="alert alert-danger mensajeError"
+            [hidden]="clave?.valid || (clave?.pristine && clave?.untouched)"
+          >
+            <span *ngIf="clave?.errors?.['required']">
+              Este campo es obligatorio
+            </span>
+          </div>
+
+          <br />
+          <ion-button
+            expand="block"
+            shape="round"
+            fill="outline"
+            size="large"
+            type="submit"
+            [disabled]="this.mail?.errors && this.clave?.errors"
+          >
+            <p style="font-family: Font1; font-size: 20px">ACCEDER</p>
+          </ion-button>
+
+          <ion-button
+            expand="block"
+            shape="round"
+            fill="outline"
+            size="large"
+            type="button"
+          >
+            <p style="font-family: Font1; font-size: 20px" routerLink="/alta-clientes">REGISTRARSE</p>
+          </ion-button>
+        </form>
+      </ion-card-content>
+    </ion-card>
+
+
+    <div *ngIf="showSpinner" class="custom-spinner">
+      <img src="/assets/images/logo.png" />
+    </div>
+  </ion-content>
+</div>

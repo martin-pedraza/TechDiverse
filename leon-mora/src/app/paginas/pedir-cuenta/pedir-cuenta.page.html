@@ -1,0 +1,51 @@
+<ion-content [fullscreen]="true" *ngIf="this.pedido != null">
+
+  <h1>💰 La Cuenta 💰</h1>
+
+  <div>
+    <ion-list>
+      <ion-card *ngFor="let item of pedido.lista" style="background-color:ghostwhite;">
+        <ion-card-header>
+          <ion-card-title style="font-size: 30px;font-family: Font1;">{{ item.nombre }}</ion-card-title>
+          <ion-card-subtitle style="font-size: 20px;">{{ item.descripcion }}</ion-card-subtitle>
+        </ion-card-header>
+
+        <ion-card-content>
+
+            <img [src]="item.fotoUno" alt="Producto">
+
+            <p style="font-size: 20px; font-family: Arial;">🔸Cantidad: {{ item.cantidad }}</p>
+            <p style="font-family: Font2;font-size: 28px;">Precio x unidad:  <br>
+              $ {{ item.precio }} 
+            </p>
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+  </div>
+
+
+  <div>
+    <ion-item>
+      <ion-label style="font-size: 25px;" ><strong>⭐ Satisfaccion:</strong> {{this.satisfaccion}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label style="font-size: 25px;" ><strong>🎁 Descuentos:</strong> $ 0</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label style="font-size: 25px;" ><strong>😀 Propina:</strong> $ {{this.propina}}</ion-label>
+    </ion-item>
+  </div>
+
+  <div>
+    <h2 style="font-size: 45px;font-family: Font2;  font-weight: 100;color: red;" >Total: $ {{this.calcularTotal()}}</h2>
+  </div>
+
+  <div>
+    <ion-button expand="block" style="margin-bottom: 50px;margin-top: 25px; height: 60px; font-size: 30px;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" (click)="realizarPago()"> Realizar Pago </ion-button>
+  </div>
+  <!-- Spinner -->
+  <div *ngIf="showSpinner" class="custom-spinner">
+    <img src="/assets/images/logo.png" />
+  </div>
+
+</ion-content>

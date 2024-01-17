@@ -1,0 +1,118 @@
+<div class="main">
+  <ion-content [fullscreen]="true" class="contenedor">
+    <ion-card class="card" style="margin-top: 5%;">
+      <ion-card-content>
+        <form (submit)="crearProducto(f)" #f="ngForm">
+          <h1 class="center-title fs-1">Alta Producto</h1>
+          <ion-img
+            src="assets/images/buffet.png"
+            ></ion-img>
+            <ion-button expand="block" 
+                        shape="round" 
+                        size="medium" 
+                        (click)="takePicture()"
+                        [disabled]="fotoTres != ''"
+                        >
+                        <p *ngIf="fotoTres == ''" style="font-family: Font1; font-size: 20px;">Sacar {{contador}} fotos del producto</p>
+                        <p *ngIf="fotoTres != ''" style="font-family: Font1; font-size: 20px;">Foto ✅ &nbsp;</p>
+            </ion-button>
+
+          <ion-item class="ion-item">
+            <ion-input class="ionput" 
+                       aria-label="Nombre" 
+                       [formControl]="nombre" 
+                       [clearOnEdit]="true" 
+                       type="text"
+                       required 
+                       placeholder="🌭 Nombre" 
+                       full
+            ></ion-input>
+          </ion-item>
+
+          <div class="alert alert-danger mensajeError"
+            [hidden]="nombre.valid || (nombre.pristine && nombre.untouched)">
+
+            <span *ngIf="nombre.errors?.['required']">
+              Este campo es obligatorio
+            </span>
+          </div>
+
+          <ion-item class="ion-item">
+            <ion-textarea class="ionput" 
+                       [formControl]="descripcion" 
+                       aria-label="Descripcion" 
+                       [clearOnEdit]="true" 
+                       type="text"
+                       required 
+                       placeholder="✏️ Descripcion" 
+                       [counter]="true" 
+                       full
+            ></ion-textarea>
+          </ion-item>
+
+          <div class="alert alert-danger mensajeError"
+            [hidden]="descripcion.valid || (descripcion.pristine && descripcion.untouched)">
+            <span *ngIf="descripcion.errors?.['required']">
+              Este campo es obligatorio
+            </span>
+          </div>
+
+          <ion-item class="ion-item">
+            <ion-input class="ionput" 
+                       [formControl]="tiempo" 
+                       aria-label="Tiempo" 
+                       [clearOnEdit]="true" 
+                       type="number"
+                       required 
+                       placeholder="⏲️ Tiempo" 
+                       [counter]="true" 
+                       full
+            ></ion-input>
+          </ion-item>
+
+          <div class="alert alert-danger mensajeError"
+            [hidden]="tiempo.valid || (tiempo.pristine && tiempo.untouched)">
+            <span *ngIf="tiempo.errors?.['required']">
+              Este campo es obligatorio
+            </span>
+          </div>
+
+          <ion-item class="ion-item">
+            <ion-input class="ionput" 
+                       [formControl]="precio" 
+                       aria-label="Precio" 
+                       [clearOnEdit]="true" 
+                       type="number"
+                       required 
+                       placeholder="💰 Precio" 
+                       [counter]="true" 
+                       full
+            ></ion-input>
+          </ion-item>
+
+          <div class="alert alert-danger mensajeError"
+            [hidden]="precio.valid || (precio.pristine && precio.untouched)">
+            <span *ngIf="precio.errors?.['required']">
+              Este campo es obligatorio
+            </span>
+          </div>
+
+          <br>
+            <ion-button expand="block" 
+                        shape="round" 
+                        fill="outline" 
+                        size="large" 
+                        type="submit" 
+                        [disabled]="!(this.nombre.valid && this.descripcion.valid && this.tiempo.valid && this.precio.valid && this.fotoUno != '' && this.fotoDos != '' && this.fotoTres != '')"
+                        >
+              <p style="font-family: Font1; font-size: 20px;">Dar de alta</p>
+            </ion-button>
+        </form>
+      </ion-card-content>
+    </ion-card>
+
+    <div *ngIf="showSpinner" class="custom-spinner">
+      <img src="/assets/images/logo.png" />
+    </div>
+  </ion-content>
+</div>

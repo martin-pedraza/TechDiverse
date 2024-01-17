@@ -1,0 +1,56 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay">
+      <ion-content class="menu-content">
+        <div class="menu-header">
+          <img src="assets/images/logo.png" alt="Restaurant Leon Mora Logo" class="menu-logo">
+          <div class="menu-title">Restaurante León Mora</div>
+        </div>
+        <ion-list id="inbox-list">
+          <ion-menu-toggle auto-hide="false">
+            <ion-item class="menu-item" [routerLink]="['/inicio-sesion']">
+              <ion-label style="font-size: 24px;">🔒 Iniciar sesion</ion-label>
+            </ion-item>
+            <ion-item class="menu-item" [routerLink]="['/home']" >
+              <ion-label style="font-size: 24px;" >🏠 Principal</ion-label>
+            </ion-item>
+            <!-- <ion-item class="menu-item" [routerLink]="['/accesos-rapidos']" >
+              <ion-label style="font-size: 24px;" >🔑 Accesos rapidos</ion-label>
+            </ion-item> -->
+            <ion-item class="menu-item" [routerLink]="['/sala-espera-cliente']" >
+              <ion-label style="font-size: 24px;" >⌛ Sala Espera Cliente</ion-label>
+            </ion-item>
+            <ion-item class="menu-item" [routerLink]="['/sala-espera-metre']" >
+              <ion-label style="font-size: 24px;" >👓 Sala Espera Metre</ion-label>
+            </ion-item>
+            <!-- <ion-item class="menu-item" [routerLink]="['/alta-usuarios']" >
+              <ion-label style="font-size: 24px;" >👑 Alta Dueño</ion-label> 
+            </ion-item> -->
+            <!-- <ion-item class="menu-item" [routerLink]="['/alta-empleados']">
+              <ion-label style="font-size: 24px;">👨🏻‍🏭 Alta Empleados</ion-label>
+            </ion-item> -->
+            <!-- <ion-item class="menu-item" [routerLink]="['/alta-clientes']">
+              <ion-label style="font-size: 24px;">💲 Alta Clientes</ion-label>
+            </ion-item>-->
+            <ion-item class="menu-item" [routerLink]="['/alta-mesa']">
+              <ion-label style="font-size: 24px;">🍽 Alta Mesa</ion-label>
+            </ion-item> 
+            <ion-item class="menu-item" [routerLink]="['/mesa']">
+              <ion-label style="font-size: 24px;">🪑 Mesa</ion-label>
+            </ion-item> 
+            <ion-item class="menu-item" [routerLink]="['/alta-producto']">
+              <ion-label style="font-size: 24px;">🌮 Alta Producto</ion-label>
+            </ion-item>
+            <ion-item class="menu-item" [routerLink]="['/encuesta']" >
+              <ion-label style="font-size: 24px;" >❓ Hacer encuesta</ion-label>
+            </ion-item>
+            <ion-item class="menu-item" [routerLink]="['/sector']" >
+              <ion-label style="font-size: 24px;" >🍝 Sector pedidos</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

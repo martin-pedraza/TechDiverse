@@ -1,0 +1,61 @@
+<div class="mainSelect">
+
+  <ion-fab *ngIf="mostrarEspera || mostrarEncuesta" vertical="top" horizontal="start" slot="fixed">
+    <ion-fab-button (click)="this.mostrarEspera = false; this.mostrarEncuesta = false" color="success" size="large">
+      <ion-icon name="return-up-back-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <div class="container">
+      <div class="sala-encuesta-btn" *ngIf="this.mostrarEspera === false && this.mostrarEncuesta === false" (click)="mostrarEncuesta = true">
+        <img class="imagen-boton" src="/assets/images/encuesta.png">
+      </div>
+      <div class="sala-espera-btn" *ngIf="this.mostrarEspera === false && this.mostrarEncuesta === false" (click)="verEspera()">
+        <img class="imagen-boton" src="/assets/images/listaEspera.png">
+      </div>
+
+      <div class="Espera" *ngIf="this.mostrarEspera === true && this.mostrarEncuesta === false">
+        <h1 style="margin-top: 2vh;text-align: center;font-family: Font1;font-size: 40px;">&nbsp; ⌛ Lista Espera ⌛</h1>
+        <ion-list>
+          <ion-card *ngFor="let usuario of this.usuariosEnEspera">
+            <ion-card-header style="background-color: lightyellow">
+              <img [src]="usuario.foto" />
+            </ion-card-header>
+            <ion-card-content style="text-align: center;">
+              <p><strong> 👥 Nombre </strong>  {{ usuario.nombre }}</p>
+              <p><strong> 🎩 Apellido </strong>  {{ usuario.apellido }}</p>
+              <p><strong> 🎫 Dni </strong>  {{ usuario.dni }}</p>
+              <p><strong> 🌟 Tipo:</strong> {{ usuario.tipo }}</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-list>
+      </div>
+
+      <div class="Encuesta" *ngIf="this.mostrarEncuesta === true && this.mostrarEspera === false">
+        <h1 style="margin-top: 2vh;text-align: center;font-family: Font1;font-size: 40px;">&nbsp; ✍🏻 Encuestas ✍🏻</h1>
+        <canvas id = "grafico"></canvas>
+        <ion-list>
+          <ion-card *ngFor="let encuesta of this.encuestas">
+            <ion-card-header style="background-color: lightyellow; align-content: center; justify-content: center;text-align: center;">
+              <h1>{{pinFormatter(encuesta.calificacion)}}</h1>
+            </ion-card-header>
+            <ion-card-content style="text-align: center;">
+              <ion-label>
+                <p style="font-size: larger;"><strong> 👥 Descripcion: </strong></p>
+                <p style="font-family: Arial; font-size: large;">{{ encuesta.descripcion }}</p>
+                <p style="font-size: larger;"><strong>Comida :</strong> {{encuesta.estadoComida}}</p>
+                <br>
+                <p style="font-size: larger;"><strong>Limpieza:</strong> {{encuesta.estadoLimpieza}}</p>
+              </ion-label>
+            </ion-card-content>
+          </ion-card>
+        </ion-list>
+      </div>
+
+  </div>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="cerrarSesion()">
+      <ion-icon name="log-out-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</div>

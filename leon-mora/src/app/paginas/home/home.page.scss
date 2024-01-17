@@ -1,0 +1,114 @@
+ion-content {
+  --background: rgb(245, 246, 204);
+  --background: radial-gradient(circle, rgba(245, 246, 204, 1) 0%, rgba(253, 187, 45, 1) 100%);
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+  
+  h1 {
+    color: white;
+    font-family: "Font2";
+    font-size: 40px;
+    text-shadow: 0 0 3px blue, 0 0 5px aqua;
+  }
+
+  h2 {
+    color: white;
+    font-family: "Font2";
+    font-size: 35px;
+    text-shadow: 0 0 3px blue, 0 0 5px aqua;
+  }
+  
+  .btnImage {
+    background-image: url('/assets/images/home_btn.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; /* Ajusta el tamaño de la imagen de fondo */
+    background-position: center center;
+    height: 80vh;
+    width: 80%;
+    opacity: 0.8;
+    max-width: 500px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 2px solid white; /* Agregamos un borde blanco de 2px */
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Transiciones para sombra y transform */
+    &:hover {
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+    &:active {
+      transform: translate(-50%, -50%) scale(1.1); // Escalamos el botón cuando se hace clic
+    }
+  }
+  
+  .btnImage img {
+    display: block; /* Esto evita cualquier espacio adicional debajo de la imagen */
+    margin: auto; /* Centra la imagen horizontalmente en el div */
+    max-width: 100%; /* Ajusta el tamaño máximo de la imagen al ancho del div */
+    height: auto; /* Permite que la altura se ajuste automáticamente al ancho */
+    margin-top: 35%;
+  }
+  
+  .scanner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    margin-top: 20px;
+  }
+
+  :host zxing-scanner::ng-deep video {
+    height: 75vh;    
+    width: 90vw;
+    object-fit: contain;
+    border-style: solid;
+    border-color: #5d78ff;
+  }
+
+
+  //SPINNER
+  @keyframes rotate-center {
+    0% {
+      -webkit-transform: rotate(0);
+      transform: rotate(0);
+    }
+  
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+
+  .custom-spinner img {
+    animation: rotate-center 1s ease-in-out infinite both;
+    max-width: 200px;
+    height: 200px;
+    opacity: 101;
+  }
+  
+  .custom-spinner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1011;
+    background-color: rgba(91, 91, 91, 0.601);
+    background-repeat: no-repeat;
+    background-size: 150px;
+    background-position: center;
+  }
+  

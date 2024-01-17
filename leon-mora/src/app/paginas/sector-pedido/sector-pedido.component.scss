@@ -1,0 +1,19 @@
+.mainSelect {
+  --background: linear-gradient(180deg, hsl(40, 100%, 85%), #cddeff 50%, #ff8c8c);
+  background-repeat: no-repeat;
+  background-size: 100px;
+  background-position: center;
+}
+
+
+ion-content{
+  justify-content: center;
+  flex-direction: column;
+
+  height: 100%;
+  --background: radial-gradient(
+    circle,
+    rgba(245, 246, 204, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
+}

@@ -1,0 +1,29 @@
+<ion-content noscroll>
+  <div
+    class="btnImage"
+    *ngIf="mostrarScanner===false"
+    (click)="mostrarScanner = true"
+  >
+    <h1>QR<br />Sala de espera</h1>
+    <!-- <img src="/assets/images/home_qr.png"> -->
+    <!-- <h2>Bienvenidos<br> 😁</h2> -->
+  </div>
+
+  <div class="scanner-container" *ngIf="mostrarScanner">
+    <zxing-scanner
+      #scanner
+      [formats]="allowedFormats"
+      (scanSuccess)="scanSuccessHandler($event)"
+    ></zxing-scanner>
+  </div>
+
+  <div *ngIf="showSpinner" class="custom-spinner">
+    <img src="/assets/images/logo.png" />
+  </div>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="cerrarSesion()">
+      <ion-icon name="log-out-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

@@ -1,0 +1,192 @@
+<div class="main">
+  <ion-content [fullscreen]="true" class="contenedor">
+    <ion-card class="card" style="margin-top: 5%">
+      <ion-card-content>
+        <form (submit)="crearEmpleado(f)" #f="ngForm">
+          <h1 class="center-title fs-1">Alta {{ perfil }}</h1>
+          <ion-img
+            style="width: 50%; display: block; margin: 0 auto"
+            [src]="imagen"
+          ></ion-img>
+
+          <zxing-scanner
+            *ngIf="mostrarScanner"
+            #scanner
+            (scanSuccess)="scanSuccessHandler($event)"
+            [formats]="allowedFormats"
+          ></zxing-scanner>
+          
+          <ion-item class="ion-item">
+            <ion-select
+              required
+              placeholder="Tipo de empleado"
+              (ionChange)="cambiarPerfil($event)"
+              style="font-size: 1.5em"
+              id="tipo"
+            >
+              <ion-select-option value="metre">Metre</ion-select-option>
+              <ion-select-option value="mozo">Mozo</ion-select-option>
+              <ion-select-option value="cocinero">Cocinero</ion-select-option>
+              <ion-select-option value="bartender">Bartender</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <div [hidden]="envio && !selectedOption">
+            <span
+              *ngIf="!selectedOption"
+              class="alert alert-danger mensajeError"
+            >
+              Debes seleccionar un tipo de empleado.
+            </span>
+          </div>
+
+          <ion-item class="ion-item">
+            <ion-input
+              class="ionput"
+              aria-label="Nombre"
+              [formControl]="nombre"
+              [clearOnEdit]="true"
+              type="text"
+              required
+              placeholder="🤖 Nombre"
+              full
+            ></ion-input>
+          </ion-item>
+
+          <div
+            [hidden]="
+              envio && (nombre.valid || (nombre.pristine && nombre.untouched))
+            "
+          >
+            <span
+              *ngIf="nombre.errors?.['required']"
+              class="alert alert-danger mensajeError"
+            >
+              Este campo es obligatorio
+            </span>
+          </div>
+
+          <ion-item class="ion-item">
+            <ion-input
+              class="ionput"
+              [formControl]="apellido"
+              aria-label="Apellido"
+              [clearOnEdit]="true"
+              type="text"
+              required
+              placeholder="👪 Apellido"
+              [counter]="true"
+              full
+            ></ion-input>
+          </ion-item>
+
+          <div
+            [hidden]="
+              envio &&
+              (apellido.valid || (apellido.pristine && apellido.untouched))
+            "
+          >
+            <span
+              *ngIf="apellido.errors?.['required']"
+              class="alert alert-danger mensajeError"
+            >
+              Este campo es obligatorio
+            </span>
+          </div>
+
+          <ion-item class="ion-item">
+            <ion-input
+              class="ionput"
+              [formControl]="dni"
+              aria-label="Dni"
+              [clearOnEdit]="true"
+              type="text"
+              required
+              placeholder="🆔 Dni"
+              [counter]="true"
+              full
+            ></ion-input>
+          </ion-item>
+
+          <div
+            [hidden]="envio && (dni.valid || (dni.pristine && dni.untouched))"
+          >
+            <span
+              *ngIf="dni.errors?.['required']"
+              class="alert alert-danger mensajeError"
+            >
+              Este campo es obligatorio
+            </span>
+          </div>
+
+          <ion-item class="ion-item">
+            <ion-input
+              class="ionput"
+              [formControl]="cuil"
+              aria-label="Cuil"
+              [clearOnEdit]="true"
+              type="text"
+              required
+              placeholder="💡 Cuil"
+              full
+            ></ion-input>
+          </ion-item>
+
+          <div
+            [hidden]="
+              envio && (cuil.valid || (cuil.pristine && cuil.untouched))
+            "
+          >
+            <span
+              *ngIf="cuil.errors?.['required']"
+              class="alert alert-danger mensajeError"
+            >
+              Este campo es obligatorio
+            </span>
+          </div>
+
+          <ion-item class="ion-item h-auto">
+            <ion-input
+              class="ionput"
+              [formControl]="foto"
+              aria-label="Cuil"
+              [clearOnEdit]="true"
+              type="file"
+              required
+              placeholder="Foto"
+              full
+              (change)="onFileSelected($event)"
+              accept="image/*"
+              style="font-size: 1em"
+            ></ion-input>
+          </ion-item>
+
+          <br />
+          <ion-button
+            expand="block"
+            shape="round"
+            fill="outline"
+            size="large"
+            type="submit"
+          >
+            <p style="font-family: Font1; font-size: 20px">Dar de alta</p>
+          </ion-button>
+        </form>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-fab horizontal="center" vertical="bottom" class="boton-logout">
+      <ion-fab-button color="warning" title="Cerrar sesión">
+        <ion-icon
+          name="qr-code-outline"
+          color="dark"
+          (click)="enableScanner()"
+          *ngIf="!mostrarScanner"
+        ></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    <div *ngIf="showSpinner" class="custom-spinner">
+      <img src="/assets/images/logo.png" />
+    </div>
+  </ion-content>
+</div>

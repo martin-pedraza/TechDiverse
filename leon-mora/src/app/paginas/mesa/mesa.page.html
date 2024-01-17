@@ -1,0 +1,302 @@
+<!-- eslint-disable @angular-eslint/template/eqeqeq -->
+<ion-content noscroll>
+  <!-- Boton para abrir scanner -->
+  <div
+    class="btnImage"
+    *ngIf="mostrarScanner===false && showChat == false"
+    (click)="mostrarScanner = true"
+  >
+    <h1>Escanea<br />QR <br />Menu</h1>
+    <h1>🍽</h1>
+  </div>
+
+  <!-- Scanner -->
+  <div class="scanner-container" *ngIf="mostrarScanner">
+    <zxing-scanner
+      #scanner
+      [formats]="allowedFormats"
+      (scanSuccess)="scanSuccessHandler($event)"
+    ></zxing-scanner>
+  </div>
+
+  <!-- Boton para cerrar scanner -->
+  <ion-fab
+    slot="fixed"
+    vertical="bottom"
+    *ngIf="mostrarScanner===true && showChat == false"
+  >
+    <ion-fab-button color="dark" (click)="mostrarScanner = false">
+      <ion-icon name="close-circle-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <!-- Boton para abrir chat -->
+  <ion-fab
+    slot="fixed"
+    vertical="bottom"
+    horizontal="start"
+    *ngIf="showChat == false"
+  >
+    <ion-fab-button color="secondary">
+      <ion-icon
+        name="chatbox-ellipses-outline"
+        (click)="abrirChat()"
+      ></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <!-- Boton para Encuestas -->
+  <!-- <ion-fab vertical="top" horizontal="end" slot="fixed" *ngIf="estadoPedido !== 'sin-pedido'">
+    <ion-fab-button
+      (click)="this.router.navigate(['encuesta'])"
+      color="tertiary"
+      size="large"
+    >
+      <ion-icon name="help-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab> -->
+
+  <!-- Boton para volver en el chat -->
+  <ion-fab
+    *ngIf="this.showChat==true"
+    vertical="top"
+    horizontal="start"
+    slot="fixed"
+  >
+    <ion-fab-button (click)="this.showChat= false" color="warning" size="large">
+      <ion-icon name="return-up-back-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <!-- Boton para cerrar sesion -->
+  <ion-fab
+    slot="fixed"
+    vertical="bottom"
+    horizontal="end"
+    *ngIf="showChat == false"
+  >
+    <ion-fab-button color="primary" (click)="cerrarSesion()">
+      <ion-icon name="log-out-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <!-- Spinner -->
+  <div *ngIf="showSpinner" class="custom-spinner">
+    <img src="/assets/images/logo.png" />
+  </div>
+
+  <!-- Modal con pedido -->
+  <ion-modal [isOpen]="isModalOpen">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title *ngIf="estadoPedido === 'sin-pedido'">Menu</ion-title>
+          <ion-title *ngIf="estadoPedido === 'aprobado'">Pedido</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpenModal(false)">Cerrar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding" *ngIf="estadoPedido === 'sin-pedido'">
+        <ion-card *ngFor="let prod of productos; index as i">
+          <div [id]="'carouselExample' + i" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="{{ prod.fotoUno }}" class="img-thumbnail" alt="..." />
+              </div>
+              <div class="carousel-item">
+                <img src="{{ prod.fotoDos }}" class="img-thumbnail" alt="..." />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="{{ prod.fotoTres }}"
+                  class="img-thumbnail"
+                  alt="..."
+                />
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              [attr.data-bs-target]="'#carouselExample' + i"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              [attr.data-bs-target]="'#carouselExample' + i"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <ion-card-header>
+            <ion-card-title>{{prod.nombre}}</ion-card-title>
+            <ion-card-subtitle>{{prod.descripcion}}</ion-card-subtitle>
+          </ion-card-header>
+
+          <ion-card-content>
+            Precio: {{prod.precio}} <br />
+            Tiempo de elaboracion: {{prod.tiempo}} minutos
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+              "
+            >
+              <ion-button
+                (click)="cambiarCantidad(prod,false)"
+                shape="round"
+                color="danger"
+                >-</ion-button
+              >
+              <h3>{{prod.cantidad}}</h3>
+              <ion-button
+                (click)="cambiarCantidad(prod,true)"
+                shape="round"
+                color="success"
+                >+</ion-button
+              >
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-content>
+
+      <ion-content class="ion-padding" *ngIf="estadoPedido !== 'sin-pedido'">
+        <ion-list *ngIf="estadoPedido !== 'sin-pedido'">
+          <div *ngFor="let producto of productosPedido">
+            <ion-item>
+              <ion-avatar slot="start">
+                <ion-img src="{{producto.fotoUno}}"></ion-img>
+              </ion-avatar>
+              <ion-label>
+                <h2>{{producto.nombre}}</h2>
+                <p>Cantidad: {{producto.cantidad}}</p>
+              </ion-label>
+            </ion-item>
+          </div>
+        </ion-list>
+
+        <!-- Boton para confirmar entrega -->
+        <ion-button
+          expand="full"
+          color="success"
+          *ngIf="estadoPedido === 'entregado'"
+          (click)="confirmarEntrega()"
+        >
+          Confirmar entrega</ion-button
+        >
+
+        <!-- Boton para pedir cuenta -->
+        <ion-button
+          expand="full"
+          color="success"
+          *ngIf="estadoPedido == 'pedido-entregado'"
+          (click)="redireccionar('/pedir-cuenta')"
+        >
+          Pedir cuenta</ion-button
+        >
+
+        <!-- <ion-fab slot="fixed" horizontal="start" vertical="bottom"> -->
+        <!-- Boton para juegos -->
+        <!-- <ion-fab-button>
+            <ion-icon name="game-controller-outline"></ion-icon>
+          </ion-fab-button>
+        </ion-fab> -->
+        <ion-fab slot="fixed" horizontal="end" vertical="bottom" *ngIf="estadoPedido != 'sin-pedido'">
+          <!-- Boton para encuesta -->
+        <ion-fab-button (click)="redireccionar('/encuesta')" color="tertiary" size="large">
+          <ion-icon name="help-outline"></ion-icon>
+        </ion-fab-button>
+        </ion-fab>
+      </ion-content>
+
+      <!-- footer -->
+      <ion-footer style="padding: 0 10px 0 10px">
+        <h1>Total: {{total}}</h1>
+        <h2>Estimado: {{tiempo}} minutos</h2>
+        <ion-button
+          *ngIf="estadoPedido === 'sin-pedido'"
+          (click)="confirmacionCierrePedido()"
+          color="warning"
+          expand="full"
+          >Terminar pedido</ion-button
+        >
+      </ion-footer>
+    </ng-template>
+  </ion-modal>
+
+  <!-- Chat -->
+  <div class="chatMozo" *ngIf="this.showChat == true">
+    <div class="chat-window">
+      <div class="app-mensajes" #content id="chat-mensajes">
+        <div
+          *ngFor="let chat of chatService.chats"
+          [ngClass]="{
+            'text-end': this.accesoService.usuarioLogueado.email == chat.emailUsuario,
+            'text-start': this.accesoService.usuarioLogueado.email != chat.emailUsuario
+          }"
+          class="chat-message"
+        >
+          <span
+            class="badge"
+            [ngClass]="{
+              'alert-success': this.accesoService.usuarioLogueado.email == chat.emailUsuario,
+              'alert-danger': this.accesoService.usuarioLogueado.email != chat.emailUsuario
+            }"
+          >
+            <strong
+              *ngIf="this.accesoService.usuarioLogueado.email != chat.emailUsuario"
+              >{{chat.nombre}}</strong
+            >
+          </span>
+          <br />
+          <i>{{chat.fecha}}</i>
+          <p
+            [ngClass]="{
+            'chat-textMe': this.accesoService.usuarioLogueado.email == chat.emailUsuario,
+            'chat-text': this.accesoService.usuarioLogueado.email != chat.emailUsuario
+          }"
+          >
+            {{chat.mensaje}}
+          </p>
+        </div>
+      </div>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-input
+              label="⌛Mensaje..."
+              labelPlacement="floating"
+              [counter]="true"
+              [(ngModel)]="this.mensaje"
+              (keyup.enter)="enviarMensaje()"
+            >
+            </ion-input>
+          </ion-col>
+          <ion-col size="auto">
+            <ion-icon
+              name="send-outline"
+              size="large"
+              style="color: white; height: 50px"
+              (click)="enviarMensaje()"
+            ></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <br />
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,203 @@
+/* Estilos generales */
+.allA {
+  background: black;
+  background-size: cover; /* Ajusta el tamaño de la imagen al contenido */
+  background-position: center; /* Centra la imagen en el contenido */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  padding-bottom: 25px;
+  //color: white; /* Cambia el color del texto si es necesario para que sea legible en el fondo */
+}
+
+.allB {
+  background: #86ddbc;
+  background-size: cover; /* Ajusta el tamaño de la imagen al contenido */
+  background-position: center; /* Centra la imagen en el contenido */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  padding-bottom: 25px;
+  //color: white; /* Cambia el color del texto si es necesario para que sea legible en el fondo */
+}
+
+.mainSelect {
+  --background: linear-gradient(180deg, #ffe6b4, #cddeff 50%, #ff8c8c);
+  background-repeat: no-repeat;
+  background-size: 100px;
+  background-position: center;
+  position: relative;
+}
+
+/* Establecemos la fuente para los encabezados h3 */
+h3 {
+  font-family: Mooli;
+}
+
+/* Estilos para el contenedor principal */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 1rem;
+  background: radial-gradient(
+    circle,
+    rgba(245, 246, 204, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
+}
+
+/* Estilos comunes para los botones "sala-encuesta-btn" y "sala-espera-btn" */
+.sala-encuesta-btn,
+.sala-espera-btn {
+  flex-basis: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 20px;
+  border: 5px outset;
+  text-align: center;
+  margin-bottom: 10px;
+  height: 50vh;
+  transition: transform 0.3s, box-shadow 0.3s; /* Transiciones comunes */
+}
+
+/* Estilos para el botón "sala-encuesta-btn" */
+.sala-encuesta-btn {
+  background-color: #86ddbc;
+  box-shadow: 0px 0px 25px #86ddbc, 0px 0px 25px #86e2d1, 0px 0px 25px #afe3df;
+}
+
+.sala-encuesta-btn:active {
+  transform: scale(0.9);
+  box-shadow: 0px 0px 25px #c3ffb4;
+}
+
+/* Estilos para el botón "sala-espera-btn" */
+.sala-espera-btn {
+  background-color: burlywood;
+  box-shadow: 0px 0px 25px #1d1c1c, 0px 0px 25px #241a1a, 0px 0px 25px #504c4c;
+}
+
+.sala-espera-btn:active {
+  transform: scale(0.9);
+  box-shadow: 0px 0px 25px #ff3232;
+}
+
+/* Estilos para los encabezados h2 dentro de los botones */
+.sala-encuesta-btn h2,
+.sala-espera-btn h2 {
+  font-family: "Fruinky", sans-serif;
+  line-height: 14rem;
+  border-radius: 15px;
+  color: black;
+  font-size: 30px;
+  height: 100%;
+}
+
+/* Estilos para las imágenes dentro de los botones */
+.imagen-boton {
+  width: 300px;
+  height: 300px;
+}
+
+/* Estilos para el contenedor de botones */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 0 10px;
+}
+
+/* Estilos para la sección "segHome" */
+.segHome {
+  --background: #b6dcfc;
+  width: 100%;
+  display: flex;
+}
+
+/* Estilos para los botones expandibles */
+.expanded-button {
+  flex-grow: 1;
+}
+
+.expanded-button:active {
+  box-shadow: 0px 0px 25px #c3ffb4;
+}
+
+/* Estilos para el segmento activo dentro de ion-segment */
+ion-segment:active {
+  filter: drop-shadow(2px 2px 4px rgba(68, 255, 0, 0.631));
+}
+
+//SPINNER
+@keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.custom-spinner img {
+  animation: rotate-center 1s ease-in-out infinite both;
+  max-width: 200px;
+  height: 200px;
+  opacity: 101;
+}
+
+.custom-spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1011;
+  background-image: url("/assets/images/matrix.jpg");
+  background-size: cover;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+
+/* Estilos para el contenedor de botones */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 1rem;
+  background-color: black;
+}
+
+
+/* Estilos para el segmento activo dentro de ion-segment */
+ion-grid {
+  background-color: black;
+  height: 100%;
+
+  ion-row {
+    height: 24vh;
+  }
+}
+
+.Espera {
+  overflow-y: auto;
+}
+
+p{
+  font-size: 30px;
+  font-family: Font2;
+}

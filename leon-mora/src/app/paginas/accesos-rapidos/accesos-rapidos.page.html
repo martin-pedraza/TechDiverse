@@ -1,0 +1,44 @@
+<ion-content [fullscreen]="true" class="content">
+  <div class="main">
+
+    <div class="ion-fab-container">
+      <ion-grid>
+        <ion-row>
+          <ion-col class="ion-img-button" (click)="seleccionarPerfil('duenio')">
+            <ion-img src="/assets/images/duenio.png"></ion-img>
+            <h1 class="center-title">Dueño</h1>
+          </ion-col>
+          <ion-col class="ion-img-button" (click)="seleccionarPerfil('metre')">
+            <ion-img src="/assets/images/recepcionista.png"></ion-img>
+            <h1 class="center-title">Metre</h1>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="ion-img-button" (click)="seleccionarPerfil('cliente')">
+            <ion-img src="/assets/images/clientes.png"></ion-img>
+            <h1 class="center-title">Cliente</h1>
+          </ion-col>
+          <ion-col class="ion-img-button" (click)="seleccionarPerfil('mozo')">
+            <ion-img src="/assets/images/mozo.png"></ion-img>
+            <h1 class="center-title">Mozo</h1>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="ion-img-button" (click)="seleccionarPerfil('cocino')">
+            <ion-img src="/assets/images/cocinero.png"></ion-img>
+            <h1 class="center-title">Cocinero</h1>
+          </ion-col>
+          <ion-col class="ion-img-button" (click)="seleccionarPerfil('bartender')">
+            <ion-img src="/assets/images/bartender.png"></ion-img>
+            <h1 class="center-title">Bartender</h1>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+
+  <div *ngIf="showSpinner" class="custom-spinner">
+    <img src="/assets/images/logo.png" />
+  </div>
+  
+</ion-content>
