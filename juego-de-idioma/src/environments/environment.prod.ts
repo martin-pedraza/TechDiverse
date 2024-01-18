@@ -1,11 +1,11 @@
 export const environment = {
   firebase: {
-    projectId: 'juego-de-idioma',
-    appId: '1:709341480792:web:a207980f9e1557a252872d',
-    storageBucket: 'juego-de-idioma.appspot.com',
-    apiKey: 'AIzaSyCndrh5oDGTPac9U3QK_uxrSNqSd1mvZ9c',
-    authDomain: 'juego-de-idioma.firebaseapp.com',
-    messagingSenderId: '709341480792',
+    apiKey: "AIzaSyAWFjDUjvgj4KyPTeU0vuVBycg7QVrDQj4",
+    authDomain: "pps-aplicaciones.firebaseapp.com",
+    projectId: "pps-aplicaciones",
+    storageBucket: "pps-aplicaciones.appspot.com",
+    messagingSenderId: "63364640193",
+    appId: "1:63364640193:web:3c7428d94355c57c2b9340",
   },
   production: true
 };
