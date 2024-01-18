@@ -4,12 +4,12 @@
 
 export const environment = {
   firebase: {
-    projectId: 'juego-de-memoria-6c632',
-    appId: '1:259207341413:web:55100a687704b342ca2d8c',
-    storageBucket: 'juego-de-memoria-6c632.appspot.com',
-    apiKey: 'AIzaSyABXGb96OfNjlLhl0KkMnOrVBcJjcBZdqw',
-    authDomain: 'juego-de-memoria-6c632.firebaseapp.com',
-    messagingSenderId: '259207341413',
+    apiKey: "AIzaSyAWFjDUjvgj4KyPTeU0vuVBycg7QVrDQj4",
+    authDomain: "pps-aplicaciones.firebaseapp.com",
+    projectId: "pps-aplicaciones",
+    storageBucket: "pps-aplicaciones.appspot.com",
+    messagingSenderId: "63364640193",
+    appId: "1:63364640193:web:3c7428d94355c57c2b9340",
   },
   production: false
 };
