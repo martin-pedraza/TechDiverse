@@ -4,12 +4,12 @@
 
 export const environment = {
   firebase: {
-    projectId: 'alarma-de-robo-392e9',
-    appId: '1:339190330899:web:78dc7705697c3628dbf1e6',
-    storageBucket: 'alarma-de-robo-392e9.appspot.com',
-    apiKey: 'AIzaSyBUAt6gNowBfiqOiFVMTIZjhAJ02ZpYCUM',
-    authDomain: 'alarma-de-robo-392e9.firebaseapp.com',
-    messagingSenderId: '339190330899',
+    apiKey: "AIzaSyAWFjDUjvgj4KyPTeU0vuVBycg7QVrDQj4",
+    authDomain: "pps-aplicaciones.firebaseapp.com",
+    projectId: "pps-aplicaciones",
+    storageBucket: "pps-aplicaciones.appspot.com",
+    messagingSenderId: "63364640193",
+    appId: "1:63364640193:web:3c7428d94355c57c2b9340",
   },
   production: false
 };
