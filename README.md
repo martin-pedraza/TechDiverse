@@ -1,6 +1,6 @@
 # TechDiverse
 
-This repository contains a variety of projects developed as part of assignments at my university. Each project tackles different concepts and technologies, showcasing my experience in diverse fields.
+This repository contains a variety of projects developed as part of my university assignments, as well as courses I have taken independently. Each project explores different concepts and technologies, highlighting my experience across various fields.
 
 ## Project List
 
