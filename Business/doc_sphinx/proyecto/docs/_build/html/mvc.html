@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MVC &mdash; documentación de Business - 1.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=4936afed"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/translations.js?v=d190bf04"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="prev" title="main" href="main.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Business
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="main.html">main</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">MVC</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-MVC.modelo">modelo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#MVC.modelo.Modelo"><code class="docutils literal notranslate"><span class="pre">Modelo</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.modelo.Modelo.alta"><code class="docutils literal notranslate"><span class="pre">Modelo.alta()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.modelo.Modelo.baja"><code class="docutils literal notranslate"><span class="pre">Modelo.baja()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.modelo.Modelo.consultar_todos"><code class="docutils literal notranslate"><span class="pre">Modelo.consultar_todos()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.modelo.Modelo.modifica"><code class="docutils literal notranslate"><span class="pre">Modelo.modifica()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-MVC.vista">vista</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#MVC.vista.Vista"><code class="docutils literal notranslate"><span class="pre">Vista</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.vista.Vista.actualizar_treeview"><code class="docutils literal notranslate"><span class="pre">Vista.actualizar_treeview()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.vista.Vista.borrar_inputs"><code class="docutils literal notranslate"><span class="pre">Vista.borrar_inputs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.vista.Vista.consultar_todos"><code class="docutils literal notranslate"><span class="pre">Vista.consultar_todos()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.vista.Vista.mostrar_boton_alta"><code class="docutils literal notranslate"><span class="pre">Vista.mostrar_boton_alta()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.vista.Vista.mostrar_boton_guardar"><code class="docutils literal notranslate"><span class="pre">Vista.mostrar_boton_guardar()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.vista.Vista.mostrar_datos_producto"><code class="docutils literal notranslate"><span class="pre">Vista.mostrar_datos_producto()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.vista.Vista.mostrar_imagen"><code class="docutils literal notranslate"><span class="pre">Vista.mostrar_imagen()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.vista.Vista.mostrar_opciones_alta"><code class="docutils literal notranslate"><span class="pre">Vista.mostrar_opciones_alta()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.vista.Vista.mostrar_opciones_seleccion"><code class="docutils literal notranslate"><span class="pre">Vista.mostrar_opciones_seleccion()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.vista.Vista.mostrar_opciones_tree"><code class="docutils literal notranslate"><span class="pre">Vista.mostrar_opciones_tree()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.vista.Vista.mostrar_treeview"><code class="docutils literal notranslate"><span class="pre">Vista.mostrar_treeview()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.vista.Vista.notificar_evento"><code class="docutils literal notranslate"><span class="pre">Vista.notificar_evento()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.vista.Vista.ocultar_boton_alta"><code class="docutils literal notranslate"><span class="pre">Vista.ocultar_boton_alta()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.vista.Vista.ocultar_boton_guardar"><code class="docutils literal notranslate"><span class="pre">Vista.ocultar_boton_guardar()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.vista.Vista.ocultar_datos_producto"><code class="docutils literal notranslate"><span class="pre">Vista.ocultar_datos_producto()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.vista.Vista.ocultar_opciones_seleccion"><code class="docutils literal notranslate"><span class="pre">Vista.ocultar_opciones_seleccion()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.vista.Vista.ocultar_treeview"><code class="docutils literal notranslate"><span class="pre">Vista.ocultar_treeview()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.vista.Vista.presionar_boton_borrar"><code class="docutils literal notranslate"><span class="pre">Vista.presionar_boton_borrar()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.vista.Vista.presionar_boton_foto"><code class="docutils literal notranslate"><span class="pre">Vista.presionar_boton_foto()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.vista.Vista.presionar_boton_guardar"><code class="docutils literal notranslate"><span class="pre">Vista.presionar_boton_guardar()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.vista.Vista.presionar_boton_modifica"><code class="docutils literal notranslate"><span class="pre">Vista.presionar_boton_modifica()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-MVC.controlador">controlador</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#MVC.controlador.Controlador"><code class="docutils literal notranslate"><span class="pre">Controlador</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.controlador.Controlador.actualizar_campos_seleccion"><code class="docutils literal notranslate"><span class="pre">Controlador.actualizar_campos_seleccion()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.controlador.Controlador.alta"><code class="docutils literal notranslate"><span class="pre">Controlador.alta()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.controlador.Controlador.baja"><code class="docutils literal notranslate"><span class="pre">Controlador.baja()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.controlador.Controlador.modifica"><code class="docutils literal notranslate"><span class="pre">Controlador.modifica()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.controlador.Controlador.seleccionar_imagen"><code class="docutils literal notranslate"><span class="pre">Controlador.seleccionar_imagen()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-MVC.database">database</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#MVC.database.Database"><code class="docutils literal notranslate"><span class="pre">Database</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.database.Database.conectar_base"><code class="docutils literal notranslate"><span class="pre">Database.conectar_base()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.database.Database.crear_tabla"><code class="docutils literal notranslate"><span class="pre">Database.crear_tabla()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-MVC.validador">validador</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#MVC.validador.Validador"><code class="docutils literal notranslate"><span class="pre">Validador</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.validador.Validador.validar_fecha"><code class="docutils literal notranslate"><span class="pre">Validador.validar_fecha()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.validador.Validador.validar_nombre"><code class="docutils literal notranslate"><span class="pre">Validador.validar_nombre()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.validador.Validador.validar_numeros_positivos"><code class="docutils literal notranslate"><span class="pre">Validador.validar_numeros_positivos()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-MVC.observador">observador</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#MVC.observador.ConcreteObserverA"><code class="docutils literal notranslate"><span class="pre">ConcreteObserverA</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.observador.ConcreteObserverA.update"><code class="docutils literal notranslate"><span class="pre">ConcreteObserverA.update()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#MVC.observador.Observador"><code class="docutils literal notranslate"><span class="pre">Observador</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.observador.Observador.update"><code class="docutils literal notranslate"><span class="pre">Observador.update()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#MVC.observador.Sujeto"><code class="docutils literal notranslate"><span class="pre">Sujeto</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.observador.Sujeto.agregar"><code class="docutils literal notranslate"><span class="pre">Sujeto.agregar()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.observador.Sujeto.notificar"><code class="docutils literal notranslate"><span class="pre">Sujeto.notificar()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MVC.observador.Sujeto.observadores"><code class="docutils literal notranslate"><span class="pre">Sujeto.observadores</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-MVC.logs">logs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#MVC.logs.registrar_en_log"><code class="docutils literal notranslate"><span class="pre">registrar_en_log()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#MVC.logs.registrar_log"><code class="docutils literal notranslate"><span class="pre">registrar_log()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Business</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">MVC</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/mvc.rst.txt" rel="nofollow"> Ver código fuente de la página</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="mvc">
+<h1>MVC<a class="headerlink" href="#mvc" title="Link to this heading"></a></h1>
+<section id="module-MVC.modelo">
+<span id="modelo"></span><h2>modelo<a class="headerlink" href="#module-MVC.modelo" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="MVC.modelo.Modelo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MVC.modelo.</span></span><span class="sig-name descname"><span class="pre">Modelo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/modelo.html#Modelo"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.modelo.Modelo" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#MVC.observador.Sujeto" title="MVC.observador.Sujeto"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sujeto</span></code></a></p>
+<p>Clase para gestionar las operaciones de la base de datos relacionadas con los productos.</p>
+<p>Esta clase utiliza una instancia de <cite>Database</cite> para realizar operaciones de alta, consulta, baja y modificación en la tabla <cite>productos</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>db</strong> (<a class="reference internal" href="#MVC.database.Database" title="MVC.database.Database"><em>Database</em></a>) – Instancia de la clase <cite>Database</cite> que se usa para la conexión y operaciones en la base de datos.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.modelo.Modelo.alta">
+<span class="sig-name descname"><span class="pre">alta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MVC.modelo.Modelo.alta" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.modelo.Modelo.baja">
+<span class="sig-name descname"><span class="pre">baja</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MVC.modelo.Modelo.baja" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.modelo.Modelo.consultar_todos">
+<span class="sig-name descname"><span class="pre">consultar_todos</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/modelo.html#Modelo.consultar_todos"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.modelo.Modelo.consultar_todos" title="Link to this definition"></a></dt>
+<dd><p>Consulta todos los productos en la base de datos.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Devuelve<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Lista de tuplas con los datos de todos los productos.</p>
+</dd>
+<dt class="field-even">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.modelo.Modelo.modifica">
+<span class="sig-name descname"><span class="pre">modifica</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MVC.modelo.Modelo.modifica" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-MVC.vista">
+<span id="vista"></span><h2>vista<a class="headerlink" href="#module-MVC.vista" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="MVC.vista.Vista">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MVC.vista.</span></span><span class="sig-name descname"><span class="pre">Vista</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/vista.html#Vista"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.vista.Vista" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Clase que gestiona la interfaz gráfica para el manejo de datos de productos.</p>
+<p>Utiliza Tkinter para crear una ventana con formularios para ingresar datos de productos, así como para mostrar una tabla con los productos existentes.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.vista.Vista.actualizar_treeview">
+<span class="sig-name descname"><span class="pre">actualizar_treeview</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/vista.html#Vista.actualizar_treeview"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.vista.Vista.actualizar_treeview" title="Link to this definition"></a></dt>
+<dd><p>Actualiza el Treeview con los datos de todos los productos.</p>
+<p>Llama a <cite>consultar_todos</cite> para obtener los datos y luego actualiza el Treeview con esta información.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.vista.Vista.borrar_inputs">
+<span class="sig-name descname"><span class="pre">borrar_inputs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/vista.html#Vista.borrar_inputs"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.vista.Vista.borrar_inputs" title="Link to this definition"></a></dt>
+<dd><p>Limpia todos los campos de entrada de datos del producto.</p>
+<p>Resetea las variables de entrada y oculta la imagen seleccionada.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.vista.Vista.consultar_todos">
+<span class="sig-name descname"><span class="pre">consultar_todos</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/vista.html#Vista.consultar_todos"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.vista.Vista.consultar_todos" title="Link to this definition"></a></dt>
+<dd><p>Consulta todos los productos registrados.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Devuelve<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Lista de tuplas con los detalles de todos los productos.</p>
+</dd>
+<dt class="field-even">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.vista.Vista.mostrar_boton_alta">
+<span class="sig-name descname"><span class="pre">mostrar_boton_alta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/vista.html#Vista.mostrar_boton_alta"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.vista.Vista.mostrar_boton_alta" title="Link to this definition"></a></dt>
+<dd><p>Muestra el botón para agregar un nuevo producto.</p>
+<p>El botón se muestra en la columna de botones para permitir la adición de un nuevo producto.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.vista.Vista.mostrar_boton_guardar">
+<span class="sig-name descname"><span class="pre">mostrar_boton_guardar</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/vista.html#Vista.mostrar_boton_guardar"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.vista.Vista.mostrar_boton_guardar" title="Link to this definition"></a></dt>
+<dd><p>Muestra el botón para guardar los cambios realizados.</p>
+<p>El botón se muestra en la columna de botones para permitir guardar los datos ingresados.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.vista.Vista.mostrar_datos_producto">
+<span class="sig-name descname"><span class="pre">mostrar_datos_producto</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/vista.html#Vista.mostrar_datos_producto"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.vista.Vista.mostrar_datos_producto" title="Link to this definition"></a></dt>
+<dd><p>Muestra los formularios de entrada de datos del producto y oculta el Treeview.</p>
+<p>Configura la interfaz para permitir al usuario ingresar detalles de un nuevo producto.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.vista.Vista.mostrar_imagen">
+<span class="sig-name descname"><span class="pre">mostrar_imagen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ruta_imagen</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/vista.html#Vista.mostrar_imagen"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.vista.Vista.mostrar_imagen" title="Link to this definition"></a></dt>
+<dd><p>Muestra una imagen en la interfaz gráfica.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ruta_imagen</strong> (<em>str</em>) – Ruta del archivo de la imagen.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.vista.Vista.mostrar_opciones_alta">
+<span class="sig-name descname"><span class="pre">mostrar_opciones_alta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/vista.html#Vista.mostrar_opciones_alta"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.vista.Vista.mostrar_opciones_alta" title="Link to this definition"></a></dt>
+<dd><p>Muestra las opciones para agregar un nuevo producto.</p>
+<p>Configura la interfaz para permitir al usuario ingresar los datos de un nuevo producto.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.vista.Vista.mostrar_opciones_seleccion">
+<span class="sig-name descname"><span class="pre">mostrar_opciones_seleccion</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/vista.html#Vista.mostrar_opciones_seleccion"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.vista.Vista.mostrar_opciones_seleccion" title="Link to this definition"></a></dt>
+<dd><p>Muestra las opciones para modificar o borrar productos.</p>
+<p>Configura la interfaz para permitir al usuario seleccionar un producto para modificar o eliminar.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.vista.Vista.mostrar_opciones_tree">
+<span class="sig-name descname"><span class="pre">mostrar_opciones_tree</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/vista.html#Vista.mostrar_opciones_tree"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.vista.Vista.mostrar_opciones_tree" title="Link to this definition"></a></dt>
+<dd><p>Muestra las opciones para ver la lista de productos.</p>
+<p>Configura la interfaz para mostrar la tabla de productos y las opciones para modificar o borrar productos.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.vista.Vista.mostrar_treeview">
+<span class="sig-name descname"><span class="pre">mostrar_treeview</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/vista.html#Vista.mostrar_treeview"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.vista.Vista.mostrar_treeview" title="Link to this definition"></a></dt>
+<dd><p>Muestra el Treeview y oculta los detalles del producto.</p>
+<p>Actualiza el Treeview con los datos actuales y oculta los formularios de entrada de datos del producto.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.vista.Vista.notificar_evento">
+<span class="sig-name descname"><span class="pre">notificar_evento</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mensaje</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/vista.html#Vista.notificar_evento"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.vista.Vista.notificar_evento" title="Link to this definition"></a></dt>
+<dd><p>Muestra una notificación en el área de texto de eventos.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mensaje</strong> (<em>str</em>) – Mensaje a mostrar en la notificación.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.vista.Vista.ocultar_boton_alta">
+<span class="sig-name descname"><span class="pre">ocultar_boton_alta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/vista.html#Vista.ocultar_boton_alta"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.vista.Vista.ocultar_boton_alta" title="Link to this definition"></a></dt>
+<dd><p>Oculta el botón para agregar un nuevo producto.</p>
+<p>Esto puede ser necesario cuando se cambia a una vista diferente en la interfaz.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.vista.Vista.ocultar_boton_guardar">
+<span class="sig-name descname"><span class="pre">ocultar_boton_guardar</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/vista.html#Vista.ocultar_boton_guardar"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.vista.Vista.ocultar_boton_guardar" title="Link to this definition"></a></dt>
+<dd><p>Oculta el botón para guardar los cambios realizados.</p>
+<p>Esto puede ser necesario cuando se cambia a una vista diferente en la interfaz.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.vista.Vista.ocultar_datos_producto">
+<span class="sig-name descname"><span class="pre">ocultar_datos_producto</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/vista.html#Vista.ocultar_datos_producto"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.vista.Vista.ocultar_datos_producto" title="Link to this definition"></a></dt>
+<dd><p>Oculta los formularios de entrada de datos del producto.</p>
+<p>Esto puede ser necesario cuando se cambia a una vista diferente en la interfaz.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.vista.Vista.ocultar_opciones_seleccion">
+<span class="sig-name descname"><span class="pre">ocultar_opciones_seleccion</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/vista.html#Vista.ocultar_opciones_seleccion"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.vista.Vista.ocultar_opciones_seleccion" title="Link to this definition"></a></dt>
+<dd><p>Oculta las opciones para modificar o borrar productos.</p>
+<p>Esto puede ser necesario cuando se cambia a una vista diferente en la interfaz.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.vista.Vista.ocultar_treeview">
+<span class="sig-name descname"><span class="pre">ocultar_treeview</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/vista.html#Vista.ocultar_treeview"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.vista.Vista.ocultar_treeview" title="Link to this definition"></a></dt>
+<dd><p>Oculta el Treeview.</p>
+<p>Esto puede ser necesario cuando se cambia a una vista diferente en la interfaz.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.vista.Vista.presionar_boton_borrar">
+<span class="sig-name descname"><span class="pre">presionar_boton_borrar</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/vista.html#Vista.presionar_boton_borrar"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.vista.Vista.presionar_boton_borrar" title="Link to this definition"></a></dt>
+<dd><p>Evento para eliminar un producto.</p>
+<p>Debe implementar la lógica para eliminar un producto registrado en la base de datos.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.vista.Vista.presionar_boton_foto">
+<span class="sig-name descname"><span class="pre">presionar_boton_foto</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/vista.html#Vista.presionar_boton_foto"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.vista.Vista.presionar_boton_foto" title="Link to this definition"></a></dt>
+<dd><p>Evento para seleccionar una foto.</p>
+<p>Debe implementar la lógica para permitir al usuario seleccionar una imagen y mostrarla en la interfaz.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.vista.Vista.presionar_boton_guardar">
+<span class="sig-name descname"><span class="pre">presionar_boton_guardar</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/vista.html#Vista.presionar_boton_guardar"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.vista.Vista.presionar_boton_guardar" title="Link to this definition"></a></dt>
+<dd><p>Evento para guardar un nuevo producto.</p>
+<p>Debe implementar la lógica para guardar los detalles de un nuevo producto en la base de datos.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.vista.Vista.presionar_boton_modifica">
+<span class="sig-name descname"><span class="pre">presionar_boton_modifica</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/vista.html#Vista.presionar_boton_modifica"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.vista.Vista.presionar_boton_modifica" title="Link to this definition"></a></dt>
+<dd><p>Evento para modificar un producto existente.</p>
+<p>Debe implementar la lógica para permitir al usuario modificar los detalles de un producto ya registrado.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-MVC.controlador">
+<span id="controlador"></span><h2>controlador<a class="headerlink" href="#module-MVC.controlador" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="MVC.controlador.Controlador">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MVC.controlador.</span></span><span class="sig-name descname"><span class="pre">Controlador</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vista</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modelo</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/controlador.html#Controlador"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.controlador.Controlador" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Controlador para la aplicación que gestiona las interacciones entre la vista y el modelo.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vista</strong> (<a class="reference internal" href="#MVC.vista.Vista" title="MVC.vista.Vista"><em>Vista</em></a>) – Instancia de la vista que se usará para la interfaz de usuario.</p></li>
+<li><p><strong>modelo</strong> (<a class="reference internal" href="#MVC.modelo.Modelo" title="MVC.modelo.Modelo"><em>Modelo</em></a>) – Instancia del modelo que maneja los datos.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.controlador.Controlador.actualizar_campos_seleccion">
+<span class="sig-name descname"><span class="pre">actualizar_campos_seleccion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/controlador.html#Controlador.actualizar_campos_seleccion"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.controlador.Controlador.actualizar_campos_seleccion" title="Link to this definition"></a></dt>
+<dd><p>Actualiza los campos de entrada en la vista con los datos del producto seleccionado en el Treeview.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>event</strong> (<em>tk.Event</em>) – Evento de selección en el Treeview.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.controlador.Controlador.alta">
+<span class="sig-name descname"><span class="pre">alta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/controlador.html#Controlador.alta"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.controlador.Controlador.alta" title="Link to this definition"></a></dt>
+<dd><p>Realiza la operación de alta de un nuevo producto en el modelo.</p>
+<p>Valida los datos proporcionados en la vista y los envía al modelo. Notifica el éxito o el error a través de la vista.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.controlador.Controlador.baja">
+<span class="sig-name descname"><span class="pre">baja</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/controlador.html#Controlador.baja"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.controlador.Controlador.baja" title="Link to this definition"></a></dt>
+<dd><p>Realiza la operación de baja de un producto en el modelo.</p>
+<p>Elimina el producto seleccionado en la vista y actualiza la interfaz de usuario en consecuencia.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.controlador.Controlador.modifica">
+<span class="sig-name descname"><span class="pre">modifica</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/controlador.html#Controlador.modifica"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.controlador.Controlador.modifica" title="Link to this definition"></a></dt>
+<dd><p>Realiza la operación de modificación de un producto en el modelo.</p>
+<p>Valida los datos proporcionados en la vista y los envía al modelo para la actualización del producto seleccionado.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.controlador.Controlador.seleccionar_imagen">
+<span class="sig-name descname"><span class="pre">seleccionar_imagen</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/controlador.html#Controlador.seleccionar_imagen"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.controlador.Controlador.seleccionar_imagen" title="Link to this definition"></a></dt>
+<dd><p>Abre un cuadro de diálogo para seleccionar una imagen y la guarda en la carpeta <cite>img</cite>.</p>
+<p>Actualiza la vista con la ruta de la imagen seleccionada.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-MVC.database">
+<span id="database"></span><h2>database<a class="headerlink" href="#module-MVC.database" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="MVC.database.Database">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MVC.database.</span></span><span class="sig-name descname"><span class="pre">Database</span></span><a class="reference internal" href="_modules/MVC/database.html#Database"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.database.Database" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Clase para gestionar la conexión y las operaciones en una base de datos SQLite.</p>
+<p>Esta clase se encarga de conectar con una base de datos SQLite llamada <cite>stock.db</cite> y de crear
+la tabla <cite>productos</cite> si no existe.</p>
+<dl class="simple">
+<dt>Attributes:</dt><dd><p>con (sqlite3.Connection): Conexión a la base de datos SQLite.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.database.Database.conectar_base">
+<span class="sig-name descname"><span class="pre">conectar_base</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/database.html#Database.conectar_base"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.database.Database.conectar_base" title="Link to this definition"></a></dt>
+<dd><p>Establece una conexión con la base de datos SQLite.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Devuelve<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Conexión a la base de datos SQLite o None si ocurre un error.</p>
+</dd>
+<dt class="field-even">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-even"><p>sqlite3.Connection or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.database.Database.crear_tabla">
+<span class="sig-name descname"><span class="pre">crear_tabla</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/database.html#Database.crear_tabla"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.database.Database.crear_tabla" title="Link to this definition"></a></dt>
+<dd><p>Crea la tabla <cite>productos</cite> en la base de datos si no existe.</p>
+<p>La tabla <cite>productos</cite> tiene las siguientes columnas:
+- id: Identificador único del producto (clave primaria, auto-incremental).
+- nombre: Nombre del producto (cadena de texto, no nula).
+- cantidad: Cantidad del producto (entero, no nulo).
+- fecha_compra: Fecha de compra del producto (fecha, no nula).
+- foto: Ruta de la imagen del producto (cadena de texto, no nula).
+- comentarios: Comentarios adicionales sobre el producto (cadena de texto, puede ser nulo).
+- precio_compra: Precio de compra del producto (real, no nulo).
+- precio_venta: Precio de venta del producto (real, no nulo).</p>
+<p>Si la tabla ya existe, no realiza ninguna acción.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-MVC.validador">
+<span id="validador"></span><h2>validador<a class="headerlink" href="#module-MVC.validador" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="MVC.validador.Validador">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MVC.validador.</span></span><span class="sig-name descname"><span class="pre">Validador</span></span><a class="reference internal" href="_modules/MVC/validador.html#Validador"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.validador.Validador" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Clase para validar datos de entrada utilizando expresiones regulares y comprobaciones simples.</p>
+<p>Esta clase proporciona métodos estáticos para validar nombres, fechas y números positivos.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.validador.Validador.validar_fecha">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validar_fecha</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fecha</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/validador.html#Validador.validar_fecha"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.validador.Validador.validar_fecha" title="Link to this definition"></a></dt>
+<dd><p>Valida que la fecha tenga el formato “yyyy-mm-dd”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fecha</strong> (<em>str</em>) – Fecha a validar.</p>
+</dd>
+<dt class="field-even">Devuelve<span class="colon">:</span></dt>
+<dd class="field-even"><p>True si la fecha cumple con el formato “yyyy-mm-dd”, False en caso contrario.</p>
+</dd>
+<dt class="field-odd">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.validador.Validador.validar_nombre">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validar_nombre</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">texto</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/validador.html#Validador.validar_nombre"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.validador.Validador.validar_nombre" title="Link to this definition"></a></dt>
+<dd><p>Valida que el texto sea un nombre válido.</p>
+<p>Un nombre válido consiste en letras y espacios, y debe tener al menos un carácter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>texto</strong> (<em>str</em>) – Texto a validar.</p>
+</dd>
+<dt class="field-even">Devuelve<span class="colon">:</span></dt>
+<dd class="field-even"><p>True si el texto es un nombre válido, False en caso contrario.</p>
+</dd>
+<dt class="field-odd">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.validador.Validador.validar_numeros_positivos">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validar_numeros_positivos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">numeros</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/validador.html#Validador.validar_numeros_positivos"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.validador.Validador.validar_numeros_positivos" title="Link to this definition"></a></dt>
+<dd><p>Valida que todos los números proporcionados sean mayores que cero.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>numeros</strong> (<em>float</em>) – Números a validar.</p>
+</dd>
+<dt class="field-even">Devuelve<span class="colon">:</span></dt>
+<dd class="field-even"><p>True si todos los números son positivos, False en caso contrario.</p>
+</dd>
+<dt class="field-odd">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-MVC.observador">
+<span id="observador"></span><h2>observador<a class="headerlink" href="#module-MVC.observador" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="MVC.observador.ConcreteObserverA">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MVC.observador.</span></span><span class="sig-name descname"><span class="pre">ConcreteObserverA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/observador.html#ConcreteObserverA"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.observador.ConcreteObserverA" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#MVC.observador.Observador" title="MVC.observador.Observador"><code class="xref py py-class docutils literal notranslate"><span class="pre">Observador</span></code></a></p>
+<p>Observador concreto que calcula la ganancia basada en los datos proporcionados.</p>
+<dl class="simple">
+<dt>Atributos:</dt><dd><p>observador_a (Sujeto): El sujeto al que este observador está registrado.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.observador.ConcreteObserverA.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/observador.html#ConcreteObserverA.update"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.observador.ConcreteObserverA.update" title="Link to this definition"></a></dt>
+<dd><p>Actualiza el observador calculando la ganancia basada en los datos proporcionados.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>args</strong> – Datos recibidos del sujeto.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="MVC.observador.Observador">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MVC.observador.</span></span><span class="sig-name descname"><span class="pre">Observador</span></span><a class="reference internal" href="_modules/MVC/observador.html#Observador"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.observador.Observador" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Clase base para los observadores. Los observadores concretos deben implementar el método update.</p>
+<dl class="simple">
+<dt>Método:</dt><dd><p>update: Método que debe ser implementado por los observadores concretos para recibir actualizaciones.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.observador.Observador.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/observador.html#Observador.update"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.observador.Observador.update" title="Link to this definition"></a></dt>
+<dd><p>Método que debe ser implementado por los observadores concretos para recibir actualizaciones.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Muestra<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong> – Si no es implementado por la clase derivada.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="MVC.observador.Sujeto">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MVC.observador.</span></span><span class="sig-name descname"><span class="pre">Sujeto</span></span><a class="reference internal" href="_modules/MVC/observador.html#Sujeto"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.observador.Sujeto" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Clase que representa un sujeto que mantiene una lista de observadores y les notifica los cambios.</p>
+<dl class="simple">
+<dt>Atributos:</dt><dd><p>observadores (list): Lista de observadores registrados.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.observador.Sujeto.agregar">
+<span class="sig-name descname"><span class="pre">agregar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/observador.html#Sujeto.agregar"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.observador.Sujeto.agregar" title="Link to this definition"></a></dt>
+<dd><p>Agrega un observador a la lista de observadores.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> – El observador que se va a agregar.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MVC.observador.Sujeto.notificar">
+<span class="sig-name descname"><span class="pre">notificar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/observador.html#Sujeto.notificar"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.observador.Sujeto.notificar" title="Link to this definition"></a></dt>
+<dd><p>Notifica a todos los observadores registrados con los argumentos proporcionados.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>args</strong> – Los argumentos que se pasarán a los métodos de actualización de los observadores.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="MVC.observador.Sujeto.observadores">
+<span class="sig-name descname"><span class="pre">observadores</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#MVC.observador.Sujeto.observadores" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-MVC.logs">
+<span id="logs"></span><h2>logs<a class="headerlink" href="#module-MVC.logs" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="MVC.logs.registrar_en_log">
+<span class="sig-prename descclassname"><span class="pre">MVC.logs.</span></span><span class="sig-name descname"><span class="pre">registrar_en_log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nombre_funcion</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parametros</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/logs.html#registrar_en_log"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.logs.registrar_en_log" title="Link to this definition"></a></dt>
+<dd><p>Registra la acción en un archivo de log con la fecha, hora y parámetros.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nombre_funcion</strong> – El nombre de la función que se está registrando.</p></li>
+<li><p><strong>parametros</strong> – Los parámetros pasados a la función.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="MVC.logs.registrar_log">
+<span class="sig-prename descclassname"><span class="pre">MVC.logs.</span></span><span class="sig-name descname"><span class="pre">registrar_log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">funcion</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MVC/logs.html#registrar_log"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#MVC.logs.registrar_log" title="Link to this definition"></a></dt>
+<dd><p>Decorador que registra la acción de una función en un archivo de log.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>funcion</strong> – La función que se va a decorar.</p>
+</dd>
+<dt class="field-even">Devuelve<span class="colon">:</span></dt>
+<dd class="field-even"><p>La función envuelta que registra en el log.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pie de página">
+        <a href="main.html" class="btn btn-neutral float-left" title="main" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Derechos de autor 2024, Martin Pedraza.</p>
+  </div>
+
+  Compilado con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

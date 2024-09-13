@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MVC.modelo &mdash; documentación de Business - 1.0</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=4936afed"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/translations.js?v=d190bf04"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Business
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../main.html">main</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mvc.html">MVC</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Business</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Código de módulo</a></li>
+      <li class="breadcrumb-item active">MVC.modelo</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Código fuente para MVC.modelo</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">MVC.observador</span> <span class="kn">import</span> <span class="n">Sujeto</span>
+<span class="kn">from</span> <span class="nn">MVC.logs</span> <span class="kn">import</span> <span class="n">registrar_log</span>
+
+<div class="viewcode-block" id="Modelo">
+<a class="viewcode-back" href="../../mvc.html#MVC.modelo.Modelo">[documentos]</a>
+<span class="k">class</span> <span class="nc">Modelo</span><span class="p">(</span><span class="n">Sujeto</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Clase para gestionar las operaciones de la base de datos relacionadas con los productos.</span>
+
+<span class="sd">    Esta clase utiliza una instancia de `Database` para realizar operaciones de alta, consulta, baja y modificación en la tabla `productos`.</span>
+
+<span class="sd">    :param db: Instancia de la clase `Database` que se usa para la conexión y operaciones en la base de datos.</span>
+<span class="sd">    :type db: Database</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Inicializa el modelo con una instancia de la clase `Database`.</span>
+
+<span class="sd">        :param db: Instancia de la clase `Database` que se usa para la conexión y operaciones en la base de datos.</span>
+<span class="sd">        :type db: Database</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">db</span> <span class="o">=</span> <span class="n">db</span>
+
+    <span class="nd">@registrar_log</span>
+    <span class="k">def</span> <span class="nf">alta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">cantidad</span><span class="p">,</span> <span class="n">fecha_compra</span><span class="p">,</span> <span class="n">foto</span><span class="p">,</span> <span class="n">comentarios</span><span class="p">,</span> <span class="n">precio_compra</span><span class="p">,</span> <span class="n">precio_venta</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Inserta un nuevo producto en la base de datos.</span>
+
+<span class="sd">        :param nombre: Nombre del producto.</span>
+<span class="sd">        :type nombre: str</span>
+<span class="sd">        :param cantidad: Cantidad del producto.</span>
+<span class="sd">        :type cantidad: int</span>
+<span class="sd">        :param fecha_compra: Fecha de compra del producto en formato &#39;yyyy-mm-dd&#39;.</span>
+<span class="sd">        :type fecha_compra: str</span>
+<span class="sd">        :param foto: Ruta de la imagen del producto.</span>
+<span class="sd">        :type foto: str</span>
+<span class="sd">        :param comentarios: Comentarios adicionales sobre el producto.</span>
+<span class="sd">        :type comentarios: str</span>
+<span class="sd">        :param precio_compra: Precio de compra del producto.</span>
+<span class="sd">        :type precio_compra: float</span>
+<span class="sd">        :param precio_venta: Precio de venta del producto.</span>
+<span class="sd">        :type precio_venta: float</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">con</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">con</span>
+        <span class="n">cursor</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">con</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+        <span class="n">datos</span> <span class="o">=</span> <span class="p">(</span><span class="n">nombre</span><span class="p">,</span> <span class="n">cantidad</span><span class="p">,</span> <span class="n">fecha_compra</span><span class="p">,</span> <span class="n">foto</span><span class="p">,</span> <span class="n">comentarios</span><span class="p">,</span> <span class="n">precio_compra</span><span class="p">,</span> <span class="n">precio_venta</span><span class="p">)</span>
+        <span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">            INSERT INTO productos(nombre, cantidad, fecha_compra, foto, comentarios, precio_compra, precio_venta) </span>
+<span class="s2">            VALUES(?, ?, ?, ?, ?, ?, ?)</span>
+<span class="s2">        &quot;&quot;&quot;</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="n">datos</span><span class="p">)</span>
+        <span class="n">con</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+        
+<div class="viewcode-block" id="Modelo.consultar_todos">
+<a class="viewcode-back" href="../../mvc.html#MVC.modelo.Modelo.consultar_todos">[documentos]</a>
+    <span class="k">def</span> <span class="nf">consultar_todos</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Consulta todos los productos en la base de datos.</span>
+
+<span class="sd">        :return: Lista de tuplas con los datos de todos los productos.</span>
+<span class="sd">        :rtype: list of tuple</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">con</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">con</span>
+        <span class="n">cursor</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+        <span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;SELECT * FROM productos ORDER BY id ASC&quot;</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">)</span>
+        <span class="n">productos</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">notificar</span><span class="p">(</span><span class="n">productos</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">productos</span></div>
+
+
+    <span class="nd">@registrar_log</span>
+    <span class="k">def</span> <span class="nf">baja</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">producto_id</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Elimina un producto de la base de datos por su ID.</span>
+
+<span class="sd">        :param producto_id: Identificador del producto a eliminar.</span>
+<span class="sd">        :type producto_id: int</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">con</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">con</span>
+        <span class="n">cursor</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">(</span><span class="n">producto_id</span><span class="p">,)</span>
+        <span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;DELETE FROM productos WHERE id = ?&quot;</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+        <span class="n">con</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    
+    <span class="nd">@registrar_log</span>
+    <span class="k">def</span> <span class="nf">modifica</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">producto_id</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">cantidad</span><span class="p">,</span> <span class="n">fecha_compra</span><span class="p">,</span> <span class="n">foto</span><span class="p">,</span> <span class="n">comentarios</span><span class="p">,</span> <span class="n">precio_compra</span><span class="p">,</span> <span class="n">precio_venta</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Modifica los datos de un producto existente en la base de datos.</span>
+
+<span class="sd">        :param producto_id: Identificador del producto a modificar.</span>
+<span class="sd">        :type producto_id: int</span>
+<span class="sd">        :param nombre: Nuevo nombre del producto.</span>
+<span class="sd">        :type nombre: str</span>
+<span class="sd">        :param cantidad: Nueva cantidad del producto.</span>
+<span class="sd">        :type cantidad: int</span>
+<span class="sd">        :param fecha_compra: Nueva fecha de compra del producto en formato &#39;yyyy-mm-dd&#39;.</span>
+<span class="sd">        :type fecha_compra: str</span>
+<span class="sd">        :param foto: Nueva ruta de la imagen del producto.</span>
+<span class="sd">        :type foto: str</span>
+<span class="sd">        :param comentarios: Nuevos comentarios sobre el producto.</span>
+<span class="sd">        :type comentarios: str</span>
+<span class="sd">        :param precio_compra: Nuevo precio de compra del producto.</span>
+<span class="sd">        :type precio_compra: float</span>
+<span class="sd">        :param precio_venta: Nuevo precio de venta del producto.</span>
+<span class="sd">        :type precio_venta: float</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">con</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">con</span>
+        <span class="n">cursor</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">(</span><span class="n">nombre</span><span class="p">,</span> <span class="n">cantidad</span><span class="p">,</span> <span class="n">fecha_compra</span><span class="p">,</span> <span class="n">foto</span><span class="p">,</span> <span class="n">comentarios</span><span class="p">,</span> <span class="n">precio_compra</span><span class="p">,</span> <span class="n">precio_venta</span><span class="p">,</span> <span class="n">producto_id</span><span class="p">)</span>
+        <span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">            UPDATE productos </span>
+<span class="s2">            SET nombre=?, cantidad=?, fecha_compra=?, foto=?, comentarios=?, precio_compra=?, precio_venta=? </span>
+<span class="s2">            WHERE id = ?</span>
+<span class="s2">        &quot;&quot;&quot;</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+        <span class="n">con</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Derechos de autor 2024, Martin Pedraza.</p>
+  </div>
+
+  Compilado con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

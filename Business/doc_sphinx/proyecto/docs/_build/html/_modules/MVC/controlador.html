@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MVC.controlador &mdash; documentación de Business - 1.0</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=4936afed"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/translations.js?v=d190bf04"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Business
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../main.html">main</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mvc.html">MVC</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Business</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Código de módulo</a></li>
+      <li class="breadcrumb-item active">MVC.controlador</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Código fuente para MVC.controlador</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="n">filedialog</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+<span class="kn">from</span> <span class="nn">MVC.validador</span> <span class="kn">import</span> <span class="n">Validador</span>
+
+<div class="viewcode-block" id="Controlador">
+<a class="viewcode-back" href="../../mvc.html#MVC.controlador.Controlador">[documentos]</a>
+<span class="k">class</span> <span class="nc">Controlador</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Controlador para la aplicación que gestiona las interacciones entre la vista y el modelo.</span>
+
+<span class="sd">    :param vista: Instancia de la vista que se usará para la interfaz de usuario.</span>
+<span class="sd">    :type vista: Vista</span>
+<span class="sd">    :param modelo: Instancia del modelo que maneja los datos.</span>
+<span class="sd">    :type modelo: Modelo</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vista</span><span class="p">,</span> <span class="n">modelo</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Inicializa el controlador, vinculando las acciones de la vista a los métodos del controlador.</span>
+
+<span class="sd">        :param vista: Instancia de la vista que se usará para la interfaz de usuario.</span>
+<span class="sd">        :type vista: Vista</span>
+<span class="sd">        :param modelo: Instancia del modelo que maneja los datos.</span>
+<span class="sd">        :type modelo: Modelo</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vista</span> <span class="o">=</span> <span class="n">vista</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">modelo</span> <span class="o">=</span> <span class="n">modelo</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">tree</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;&lt;TreeviewSelect&gt;&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">actualizar_campos_seleccion</span><span class="p">)</span>
+        
+        <span class="c1"># Sobreescritura de funciones de Vista</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">presionar_boton_foto</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">seleccionar_imagen</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">presionar_boton_modifica</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">modifica</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">presionar_boton_borrar</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">baja</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">presionar_boton_guardar</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">alta</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">consultar_todos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">modelo</span><span class="o">.</span><span class="n">consultar_todos</span>
+        
+<div class="viewcode-block" id="Controlador.alta">
+<a class="viewcode-back" href="../../mvc.html#MVC.controlador.Controlador.alta">[documentos]</a>
+    <span class="k">def</span> <span class="nf">alta</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Realiza la operación de alta de un nuevo producto en el modelo.</span>
+
+<span class="sd">        Valida los datos proporcionados en la vista y los envía al modelo. Notifica el éxito o el error a través de la vista.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">nombre</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">nombre_val</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+        <span class="n">cantidad</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">cantidad_val</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+        <span class="n">fecha_compra</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">fecha_compra_val</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+        <span class="n">foto</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">foto_val</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+        <span class="n">comentarios</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">comentarios_val</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+        <span class="n">precio_compra</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">precio_compra_val</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+        <span class="n">precio_venta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">precio_venta_val</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+        
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">Validador</span><span class="o">.</span><span class="n">validar_nombre</span><span class="p">(</span><span class="n">nombre</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">notificar_evento</span><span class="p">(</span><span class="s2">&quot;Error en nomenclatura&quot;</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">Validador</span><span class="o">.</span><span class="n">validar_fecha</span><span class="p">(</span><span class="n">fecha_compra</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">notificar_evento</span><span class="p">(</span><span class="s2">&quot;La fecha debe ser yyyy-mm-dd&quot;</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">Validador</span><span class="o">.</span><span class="n">validar_numeros_positivos</span><span class="p">(</span><span class="n">cantidad</span><span class="p">,</span> <span class="n">precio_compra</span><span class="p">,</span> <span class="n">precio_venta</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">notificar_evento</span><span class="p">(</span><span class="s2">&quot;La cantidad y los precios deben ser mayores que cero&quot;</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">foto</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">notificar_evento</span><span class="p">(</span><span class="s2">&quot;Debes escoger una foto&quot;</span><span class="p">)</span>
+            
+        <span class="bp">self</span><span class="o">.</span><span class="n">modelo</span><span class="o">.</span><span class="n">alta</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span> <span class="n">cantidad</span><span class="p">,</span> <span class="n">fecha_compra</span><span class="p">,</span> <span class="n">foto</span><span class="p">,</span> <span class="n">comentarios</span><span class="p">,</span> <span class="n">precio_compra</span><span class="p">,</span> <span class="n">precio_venta</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">borrar_inputs</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">mostrar_treeview</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">notificar_evento</span><span class="p">(</span><span class="s2">&quot;Se realizó un alta&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Controlador.baja">
+<a class="viewcode-back" href="../../mvc.html#MVC.controlador.Controlador.baja">[documentos]</a>
+    <span class="k">def</span> <span class="nf">baja</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Realiza la operación de baja de un producto en el modelo.</span>
+
+<span class="sd">        Elimina el producto seleccionado en la vista y actualiza la interfaz de usuario en consecuencia.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">tree</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">tree</span>
+        <span class="n">valor</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">selection</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">valor</span><span class="p">:</span>
+            <span class="n">producto_id</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="n">valor</span><span class="p">)[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">modelo</span><span class="o">.</span><span class="n">baja</span><span class="p">(</span><span class="n">producto_id</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">borrar_inputs</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">mostrar_treeview</span><span class="p">()</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">notificar_evento</span><span class="p">(</span><span class="s2">&quot;Se realizó una baja&quot;</span><span class="p">)</span></div>
+
+            
+<div class="viewcode-block" id="Controlador.modifica">
+<a class="viewcode-back" href="../../mvc.html#MVC.controlador.Controlador.modifica">[documentos]</a>
+    <span class="k">def</span> <span class="nf">modifica</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Realiza la operación de modificación de un producto en el modelo.</span>
+
+<span class="sd">        Valida los datos proporcionados en la vista y los envía al modelo para la actualización del producto seleccionado.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">nombre</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">nombre_val</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+        <span class="n">cantidad</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">cantidad_val</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+        <span class="n">fecha_compra</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">fecha_compra_val</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+        <span class="n">foto</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">foto_val</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+        <span class="n">comentarios</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">comentarios_val</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+        <span class="n">precio_compra</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">precio_compra_val</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+        <span class="n">precio_venta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">precio_venta_val</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+        <span class="n">tree</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">tree</span>
+        
+        <span class="n">valor</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">selection</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">valor</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">notificar_evento</span><span class="p">(</span><span class="s2">&quot;No se seleccionó elemento a modificar&quot;</span><span class="p">)</span>
+            
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">Validador</span><span class="o">.</span><span class="n">validar_nombre</span><span class="p">(</span><span class="n">nombre</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">notificar_evento</span><span class="p">(</span><span class="s2">&quot;Error en nomenclatura&quot;</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">Validador</span><span class="o">.</span><span class="n">validar_fecha</span><span class="p">(</span><span class="n">fecha_compra</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">notificar_evento</span><span class="p">(</span><span class="s2">&quot;La fecha debe ser yyyy-mm-dd&quot;</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">Validador</span><span class="o">.</span><span class="n">validar_numeros_positivos</span><span class="p">(</span><span class="n">cantidad</span><span class="p">,</span> <span class="n">precio_compra</span><span class="p">,</span> <span class="n">precio_venta</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">notificar_evento</span><span class="p">(</span><span class="s2">&quot;La cantidad y los precios deben ser mayores que cero&quot;</span><span class="p">)</span>
+            
+        <span class="n">producto_id</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="n">valor</span><span class="p">)[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">modelo</span><span class="o">.</span><span class="n">modifica</span><span class="p">(</span><span class="n">producto_id</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">cantidad</span><span class="p">,</span> <span class="n">fecha_compra</span><span class="p">,</span> <span class="n">foto</span><span class="p">,</span> <span class="n">comentarios</span><span class="p">,</span> <span class="n">precio_compra</span><span class="p">,</span> <span class="n">precio_venta</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">borrar_inputs</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">mostrar_treeview</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">notificar_evento</span><span class="p">(</span><span class="s2">&quot;Se modificó un elemento&quot;</span><span class="p">)</span></div>
+
+            
+<div class="viewcode-block" id="Controlador.actualizar_campos_seleccion">
+<a class="viewcode-back" href="../../mvc.html#MVC.controlador.Controlador.actualizar_campos_seleccion">[documentos]</a>
+    <span class="k">def</span> <span class="nf">actualizar_campos_seleccion</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Actualiza los campos de entrada en la vista con los datos del producto seleccionado en el Treeview.</span>
+
+<span class="sd">        :param event: Evento de selección en el Treeview.</span>
+<span class="sd">        :type event: tk.Event</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">item_seleccionado</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">tree</span><span class="o">.</span><span class="n">focus</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">item_seleccionado</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">mostrar_opciones_seleccion</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">mostrar_datos_producto</span><span class="p">()</span>
+            <span class="n">valores</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">tree</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="n">item_seleccionado</span><span class="p">)[</span><span class="s1">&#39;values&#39;</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">nombre_val</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">valores</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">valores</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">cantidad_val</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">valores</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="n">valores</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">fecha_compra_val</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">valores</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="n">valores</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">valores</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">mostrar_imagen</span><span class="p">(</span><span class="n">valores</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">comentarios_val</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">valores</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="k">if</span> <span class="n">valores</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">precio_compra_val</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">valores</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="k">if</span> <span class="n">valores</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">precio_venta_val</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">valores</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="k">if</span> <span class="n">valores</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">)</span></div>
+
+            
+<div class="viewcode-block" id="Controlador.seleccionar_imagen">
+<a class="viewcode-back" href="../../mvc.html#MVC.controlador.Controlador.seleccionar_imagen">[documentos]</a>
+    <span class="k">def</span> <span class="nf">seleccionar_imagen</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Abre un cuadro de diálogo para seleccionar una imagen y la guarda en la carpeta `img`.</span>
+
+<span class="sd">        Actualiza la vista con la ruta de la imagen seleccionada.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ruta_imagen</span> <span class="o">=</span> <span class="n">filedialog</span><span class="o">.</span><span class="n">askopenfilename</span><span class="p">(</span><span class="n">filetypes</span><span class="o">=</span><span class="p">[(</span><span class="s2">&quot;Image files&quot;</span><span class="p">,</span> <span class="s2">&quot;*.png;*.jpg;*.jpeg&quot;</span><span class="p">)])</span>
+        <span class="k">if</span> <span class="n">ruta_imagen</span><span class="p">:</span>
+            <span class="n">nombre_archivo</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">ruta_imagen</span><span class="p">)</span>
+            <span class="n">ruta_destino</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;img&quot;</span><span class="p">,</span> <span class="n">nombre_archivo</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s2">&quot;img&quot;</span><span class="p">):</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s2">&quot;img&quot;</span><span class="p">)</span>
+            <span class="n">shutil</span><span class="o">.</span><span class="n">copy2</span><span class="p">(</span><span class="n">ruta_imagen</span><span class="p">,</span> <span class="n">ruta_destino</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">foto_val</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">ruta_destino</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">vista</span><span class="o">.</span><span class="n">mostrar_imagen</span><span class="p">(</span><span class="n">ruta_destino</span><span class="p">)</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Derechos de autor 2024, Martin Pedraza.</p>
+  </div>
+
+  Compilado con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

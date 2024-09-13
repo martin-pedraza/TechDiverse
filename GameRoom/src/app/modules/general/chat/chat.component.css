@@ -1,0 +1,11 @@
+.chat {
+    background: #e4dbd7;
+}
+
+.current-user{
+    background-color: #dbf7c7;
+}
+
+.other-user{
+    background-color: #ffffff;
+}
